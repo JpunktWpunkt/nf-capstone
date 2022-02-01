@@ -10,10 +10,10 @@ const Page = () => {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">My Project</title>
+				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<h1>Home</h1>
+			<h1>FamilyHub</h1>
 			{loading && <div>Loading...</div>}
 			{error && <div>{error.message}</div>}
 			{data && (

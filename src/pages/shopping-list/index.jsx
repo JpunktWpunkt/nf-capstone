@@ -6,10 +6,10 @@ const Page = () => {
 	return (
 		<Layout>
 			<Head>
-				<title key="title">About me</title>
-				<meta key="description" name="description" content="About" />
+				<title key="title">Shopping-List</title>
+				<meta key="description" name="description" content="Shopping-List" />
 			</Head>
-			<h1>About me</h1>
+			<h1>Shopping-List</h1>
 		</Layout>
 	);
 };
