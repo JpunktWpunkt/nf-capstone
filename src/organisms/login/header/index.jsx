@@ -17,7 +17,6 @@ import Typography from '@mui/material/Typography';
 					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 						FamilyHub
 					</Typography>
-					<Button color="inherit">Abmelden</Button>
 				</Toolbar>
 			</AppBar>
 		</Box>
