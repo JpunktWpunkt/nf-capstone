@@ -1,3 +1,4 @@
+import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
@@ -10,22 +11,20 @@ const Page = () => {
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<h1>FamilyHub</h1>
-
 			<Link passHref href="/user/mama">
-				<button type="button">Mama</button>
+				<Button variant="outlined">Mama</Button>
 			</Link>
 			<br />
 			<Link passHref href="/user/papa">
-				<button type="button">Papa</button>
+				<Button variant="outlined">Papa</Button>
 			</Link>
 			<br />
 			<Link passHref href="/user/kind1">
-				<button type="button">Kind 1</button>
+				<Button variant="outlined">Kind 1</Button>
 			</Link>
 			<br />
 			<Link passHref href="/user/kind2">
-				<button type="button">Kind 2</button>
+				<Button variant="outlined">Kind 2</Button>
 			</Link>
 			<br />
 		</Layout>
