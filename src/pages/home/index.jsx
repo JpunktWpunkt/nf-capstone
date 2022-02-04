@@ -31,6 +31,10 @@ const Page = () => {
 				<Button variant="outlined">Kind 3</Button>
 			</Link>
 			<br />
+			<Link passHref href="/profile/add">
+				<Button variant="outlined">Add new User</Button>
+			</Link>
+
 		</Layout>
 	);
 };
