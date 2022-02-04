@@ -1,12 +1,9 @@
 import Head from "next/head";
+import Link from "next/link";
 import React from "react";
-import Button from "../atoms/button";
-import useGet from "../ions/hooks/fetch/get";
 import Layout from "../organisms/layout";
 
 const Page = () => {
-	const { data, loading, error } = useGet("/api/hello");
-
 	return (
 		<Layout>
 			<Head>
@@ -14,14 +11,23 @@ const Page = () => {
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
 			<h1>FamilyHub</h1>
-			{loading && <div>Loading...</div>}
-			{error && <div>{error.message}</div>}
-			{data && (
-				<pre>
-					<code>{JSON.stringify(data, null, 4)}</code>
-				</pre>
-			)}
-			<Button>Click me</Button>
+
+			<Link passHref href="/user/mama">
+				<button type="button">Mama</button>
+			</Link>
+			<br />
+			<Link passHref href="/user/papa">
+				<button type="button">Papa</button>
+			</Link>
+			<br />
+			<Link passHref href="/user/kind1">
+				<button type="button">Kind 1</button>
+			</Link>
+			<br />
+			<Link passHref href="/user/kind2">
+				<button type="button">Kind 2</button>
+			</Link>
+			<br />
 		</Layout>
 	);
 };
