@@ -11,8 +11,6 @@ const Page = () => {
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<h1>FamilyHub</h1>
-
 			<Link passHref href="/user/mama">
 				<Button variant="outlined" type="button">Mama</Button>
 			</Link>
