@@ -12,19 +12,19 @@ const Page = () => {
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
 			<Link passHref href="/user/mama">
-				<Button variant="outlined" type="button">Mama</Button>
+				<Button variant="outlined">Mama</Button>
 			</Link>
 			<br />
 			<Link passHref href="/user/papa">
-				<Button variant="outlined" type="button">Papa</Button>
+				<Button variant="outlined">Papa</Button>
 			</Link>
 			<br />
 			<Link passHref href="/user/kind1">
-				<Button variant="outlined" type="button">Kind 1</Button>
+				<Button variant="outlined">Kind 1</Button>
 			</Link>
 			<br />
 			<Link passHref href="/user/kind2">
-				<Button variant="outlined" type="button">Kind 2</Button>
+				<Button variant="outlined">Kind 2</Button>
 			</Link>
 			<br />
 		</Layout>
