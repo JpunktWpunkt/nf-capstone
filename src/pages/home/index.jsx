@@ -7,7 +7,6 @@ import Layout from "../../organisms/layout";
 const Page = () => {
 	return (
 		<Layout>
-
 			<Head>
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
@@ -35,7 +34,6 @@ const Page = () => {
 			<Link passHref href="/profile/add">
 				<Button variant="outlined">Add new User</Button>
 			</Link>
-
 		</Layout>
 	);
 };
