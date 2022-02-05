@@ -1,33 +1,28 @@
+import { TextField } from "@mui/material";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-import Layout from "../organisms/layout";
+import Login from "../organisms/login";
+
 
 const Page = () => {
 	return (
-		<Layout>
+		<Login>
 			<Head>
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<Link passHref href="/user/mama">
-				<Button variant="outlined">Mama</Button>
-			</Link>
 			<br />
-			<Link passHref href="/user/papa">
-				<Button variant="outlined">Papa</Button>
-			</Link>
+			<TextField id="outlined-basic" label="Username" variant="outlined" />
 			<br />
-			<Link passHref href="/user/kind1">
-				<Button variant="outlined">Kind 1</Button>
-			</Link>
 			<br />
-			<Link passHref href="/user/kind2">
-				<Button variant="outlined">Kind 2</Button>
-			</Link>
+			<TextField id="outlined-basic" label="Password" variant="outlined" type="password" />
 			<br />
-		</Layout>
+			<br />
+			<Link passHref href="/home"><Button variant="outlined">Login</Button>
+			</Link>
+		</Login>
 	);
 };
 
