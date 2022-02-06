@@ -6,7 +6,7 @@ const Page = () => {
 	const { query } = useRouter();
 	return (
 		<Layout>
-			<div>Hallo {query.username}</div>
+			<div>Hallo {query.name}</div>
 		</Layout>
 	);
 };

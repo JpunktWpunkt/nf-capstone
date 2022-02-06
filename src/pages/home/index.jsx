@@ -1,41 +1,64 @@
+import { AddBoxOutlined } from "@mui/icons-material";
 import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
 import Layout from "../../organisms/layout";
 
-const Page = () => {
+
+
+
+// eslint-disable-next-line react/function-component-definition
+export default function Page({ users }) {
 	return (
 		<Layout>
 			<Head>
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<Link passHref href="/user/mama">
-				<Button variant="outlined">Chaosqueen</Button>
-			</Link>
-			<br />
-			<Link passHref href="/user/papa">
-				<Button variant="outlined">Master of Desaster</Button>
-			</Link>
-			<br />
-			<Link passHref href="/user/kind1">
-				<Button variant="outlined">Kind 1</Button>
-			</Link>
-			<br />
-			<Link passHref href="/user/kind2">
-				<Button variant="outlined">Kind 2</Button>
-			</Link>
-			<br />
-			<Link passHref href="/user/kind3">
-				<Button variant="outlined">Kind 3</Button>
-			</Link>
-			<br />
-			<Link passHref href="/profile/add">
-				<Button variant="outlined">Add new User</Button>
-			</Link>
+
+			{/*create const getStaticProps, will be changed later*/}
+			{users.map((user) =>{
+				return (
+					<Link key={user.id} passHref href={`user/${user.id}?name=${user.name}`}>
+						<Button variant="outlined">{user.name}</Button>
+					</Link>
+				)
+			})}
+
+
 		</Layout>
 	);
 };
 
-export default Page;
+export const getStaticProps = async () => {
+	const users = [
+		{
+			id: 1,
+			name: "Mama"
+		},
+		{
+			id: 2,
+			name: "Papa"
+		},
+		{
+			id: 3,
+			name: "Kind 1"
+		},
+		{
+			id: 4,
+			name: "Kind 2"
+		},
+		{
+			id: 5,
+			name: "Kind 3"
+		}
+	];
+
+	return {
+		props: {
+			users
+		}
+	};
+
+};
