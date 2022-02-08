@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 import Layout from "../../organisms/layout";
 
-
 // eslint-disable-next-line react/function-component-definition
 export default function Page({ users }) {
 	return (
@@ -15,47 +14,44 @@ export default function Page({ users }) {
 			</Head>
 
 			{/*create const getStaticProps, will be changed later*/}
-			{users.map((user) =>{
+			{users.map(user => {
 				return (
 					<Link key={user.id} passHref href={`user/${user.id}?name=${user.name}`}>
 						<Button variant="outlined">{user.name}</Button>
 					</Link>
-				)
+				);
 			})}
-
-
 		</Layout>
 	);
-};
+}
 
 export const getStaticProps = async () => {
 	const users = [
 		{
 			id: 1,
-			name: "Mama"
+			name: "Charlie",
 		},
 		{
 			id: 2,
-			name: "Papa"
+			name: "Alex",
 		},
 		{
 			id: 3,
-			name: "Kind 1"
+			name: "Tom",
 		},
 		{
 			id: 4,
-			name: "Kind 2"
+			name: "Lea",
 		},
 		{
 			id: 5,
-			name: "Kind 3"
-		}
+			name: "Grandma",
+		},
 	];
 
 	return {
 		props: {
-			users
-		}
+			users,
+		},
 	};
-
 };
