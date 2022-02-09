@@ -9,6 +9,7 @@ export default function Page({ users }) {
 	return (
 		<Layout>
 			<Head>
+				<div>foo</div>
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
