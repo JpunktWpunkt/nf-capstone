@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import process from "node:process";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -14,20 +15,18 @@ if (!MONGODB_URI) {
 let cached = global.mongoose;
 
 if (!cached) {
-	cached = global.mongoose = { connection: null, promise: null };
+	cached = { connection: null, promise: null };
+	global.mongoose = cached;
 }
 
 async function dbConnect() {
+	console.log("Connecting to DB");
 	if (cached.connection) {
 		return cached.connection;
 	}
 
 	if (!cached.promise) {
-		const opts = {
-			bufferCommands: false,
-		};
-
-		cached.promise = mongoose.connect(MONGODB_URI, opts).then(mongoose => {
+		cached.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false }).then(mongoose => {
 			return mongoose;
 		});
 	}

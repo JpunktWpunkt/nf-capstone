@@ -2,57 +2,50 @@ import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+
 import Layout from "../../organisms/layout";
 
 // eslint-disable-next-line react/function-component-definition
-export default function Page({ users }) {
+const Page = ({ users }) => {
+	console.log(users);
 	return (
 		<Layout>
 			<Head>
-				<div>foo</div>
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-
 			{/*create const getStaticProps, will be changed later*/}
 			{users.map(user => {
 				return (
-					<Link key={user.id} passHref href={`user/${user.id}?name=${user.name}`}>
-						<Button variant="outlined">{user.name}</Button>
+					<Link key={user._id} passHref href={`/user/${user._id}?name=${user.username}`}>
+						<Button variant="outlined">{user.username}</Button>
 					</Link>
 				);
 			})}
 		</Layout>
 	);
+};
+
+export async function getServerSideProps() {
+	const { default: dbConnect } = await import("../../../database/index"); //dynamic promise Routing
+	const { default: User } = await import("../../../model/User.model");
+	await dbConnect();
+	try {
+		const users = await User.find();
+		console.log(users, typeof users, Array.isArray(users));
+		return {
+			props: {
+				users: JSON.parse(JSON.stringify(users)),
+			},
+		};
+	} catch (err) {
+		console.log(err);
+		return {
+			props: {
+				users: [],
+			},
+		};
+	}
 }
 
-export const getStaticProps = async () => {
-	const users = [
-		{
-			id: 1,
-			name: "Charlie",
-		},
-		{
-			id: 2,
-			name: "Alex",
-		},
-		{
-			id: 3,
-			name: "Tom",
-		},
-		{
-			id: 4,
-			name: "Lea",
-		},
-		{
-			id: 5,
-			name: "Grandma",
-		},
-	];
-
-	return {
-		props: {
-			users,
-		},
-	};
-};
+export default Page;
