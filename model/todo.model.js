@@ -5,6 +5,4 @@ const todoSchema = new mongoose.Schema({
 	isChecked: Boolean,
 });
 
-const Todo = mongoose.model("Todo", todoSchema);
-
-export default Todo;
+export default mongoose.models.Todo || mongoose.model("Todo", todoSchema);
