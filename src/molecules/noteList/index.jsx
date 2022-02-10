@@ -1,6 +1,7 @@
 import * as React from "react";
 import NoteItem from "../noteItem";
 
+//runs client
 const NoteList = ({ userId }) => {
 	const notes = getNotes(userId);
 	return (

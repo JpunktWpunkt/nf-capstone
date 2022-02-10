@@ -6,12 +6,19 @@ import React from "react";
 
 const Footer = () => {
 	return (
-		<AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
+		<AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
 			<Toolbar>
-		©2022	JpunktWpunkt
 				<Link passHref href="/home">
-					<Button color="inherit" variant="outlined">Home</Button>
+					<Button color="inherit" variant="outlined">
+						Home
+					</Button>
 				</Link>
+				<Link passHref href="/home">
+					<Button color="inherit" variant="outlined">
+						+ Add note
+					</Button>
+				</Link>
+				©2022 JpunktWpunkt
 			</Toolbar>
 		</AppBar>
 	);
