@@ -16,7 +16,7 @@ const NoteList = ({ userId }) => {
 
 /*this is a placeholder for later fetching*/
 function getNotes(userId) {
-	console.log(userId);
+	console.log("userid", userId);
 	return [
 		{
 			id: 1,
