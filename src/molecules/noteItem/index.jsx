@@ -5,7 +5,8 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
-const NoteItem = () => {
+const NoteItem = ({ userId }) => {
+	console.log("NoteItem userId", userId);
 	const [title, setTitle] = useState("");
 	const [titleError, setTitleError] = useState(false);
 
@@ -16,8 +17,7 @@ const NoteItem = () => {
 
 		if (title) {
 			console.log("for post: ", title);
-			const input = { title };
-			axios.post("/api/notes", input);
+			axios.post("/api/notes", { title: title, userId: userId });
 		}
 	};
 	return (

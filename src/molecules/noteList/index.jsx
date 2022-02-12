@@ -3,12 +3,13 @@ import NoteItem from "../noteItem";
 
 //runs client
 const NoteList = ({ userId }) => {
+	console.log("NoteList userId: ", userId);
 	const notes = getNotes(userId);
 	return (
 		<>
 			<h3>NoteList</h3>
 			{notes.map(note => {
-				return <NoteItem key={note.id} note={note} />;
+				return <NoteItem key={note.id} note={note} userId={userId} />;
 			})}
 		</>
 	);
@@ -16,7 +17,7 @@ const NoteList = ({ userId }) => {
 
 /*this is a placeholder for later fetching*/
 function getNotes(userId) {
-	console.log("userid", userId);
+	console.log(userId);
 	return [
 		{
 			id: 1,
