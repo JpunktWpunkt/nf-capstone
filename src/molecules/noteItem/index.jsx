@@ -7,17 +7,17 @@ import axios from "axios";
 
 const NoteItem = ({ userId }) => {
 	console.log("NoteItem userId", userId);
-	const [title, setTitle] = useState("");
-	const [titleError, setTitleError] = useState(false);
+	const [content, setContent] = useState("");
+	const [contentError, setContentError] = useState(false);
 
 	const handleSubmit = submitEvent => {
 		submitEvent.preventDefault();
 		/*	console.log(submitEvent.target.elements.noteContent.value);*/
-		setTitleError(false);
+		setContentError(false);
 
-		if (title) {
-			console.log("for post: ", title);
-			axios.post("/api/notes", { title: title, userId: userId });
+		if (content) {
+			console.log("for post: ", content);
+			axios.post("/api/notes", { content: content, userId: userId });
 		}
 	};
 	return (
@@ -40,8 +40,8 @@ const NoteItem = ({ userId }) => {
 						label="Put your notes here"
 						rows={6}
 						name="put"
-						error={titleError}
-						onChange={e => setTitle(e.target.value)}
+						error={contentError}
+						onChange={e => setContent(e.target.value)}
 					/>
 					<Button type="submit">Save</Button>
 				</form>
