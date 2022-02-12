@@ -5,7 +5,8 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
-const NoteItem = ({ userId }) => {
+const NoteItem = ({ userId, note }) => {
+	/*userID comes from getserversideprops home/ and note comes from noteList with axios, useState, useEffect*/
 	console.log("NoteItem userId", userId);
 	const [content, setContent] = useState("");
 	const [contentError, setContentError] = useState(false);
@@ -28,6 +29,7 @@ const NoteItem = ({ userId }) => {
 				</Grid>
 				<form onSubmit={handleSubmit}>
 					<TextField
+						value={note.content}
 						multiline
 						fullWidth
 						required
