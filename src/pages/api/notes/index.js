@@ -9,7 +9,7 @@ const handler = async (request, response) => {
 	switch (method) {
 		case "GET":
 			try {
-				const mongoResponse = await Note.find();
+				const mongoResponse = await Note.find({ userId: request.query.userId });
 				response.status(200).json(mongoResponse);
 			} catch (err) {
 				console.log(err);

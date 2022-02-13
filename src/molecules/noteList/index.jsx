@@ -10,19 +10,22 @@ const NoteList = ({ userId }) => {
 	React.useEffect(() => {
 		//TODO show loading spinner
 
-		axios.get("/api/notes").then(response => {
-			console.log(response);
-			setNotes(response.data);
-		});
-	}, []);
+		const items = async () => {
+			const result = await axios.get("/api/notes", { params: { userId: userId } });
+			setNotes(result.data);
+		};
+		items();
+	}, [userId]); //wird als parameter hier eingefügt, um sie für den Axios zu nutzen
 
-	if (!notes) return null;
+	if (!notes) {
+		return null;
+	}
 
 	return (
 		<>
 			<h3>NoteList</h3>
 			{notes.map(note => {
-				return <NoteItem key={note.id} note={note} userId={userId} />;
+				return <NoteItem key={note._id} note={note} userId={userId} />;
 			})}
 		</>
 	);
