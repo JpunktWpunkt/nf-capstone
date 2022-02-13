@@ -18,7 +18,7 @@ const NoteItem = ({ userId, note }) => {
 
 		if (content) {
 			console.log("for post: ", content);
-			axios.post("/api/notes", { content: content, userId: userId });
+			axios.put("/api/notes", { content: content, userId: userId, noteId: note._id });
 		}
 	};
 	return (
