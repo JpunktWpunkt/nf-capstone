@@ -2,6 +2,7 @@ import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+
 import Layout from "../../organisms/layout";
 
 // eslint-disable-next-line react/function-component-definition
