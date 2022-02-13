@@ -3,7 +3,7 @@ import dbConnect from "../../../../database/index";
 
 const handler = async (request, response) => {
 	const { method } = request;
-	await dbConnect;
+	await dbConnect();
 	console.log("handler", request.body);
 
 	switch (method) {
