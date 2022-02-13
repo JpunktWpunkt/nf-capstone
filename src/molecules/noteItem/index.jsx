@@ -29,7 +29,6 @@ const NoteItem = ({ userId, note }) => {
 				</Grid>
 				<form onSubmit={handleSubmit}>
 					<TextField
-						value={note.content}
 						multiline
 						fullWidth
 						required
@@ -43,6 +42,7 @@ const NoteItem = ({ userId, note }) => {
 						rows={6}
 						name="put"
 						error={contentError}
+						defaultValue={note.content}
 						onChange={e => setContent(e.target.value)}
 					/>
 					<Button type="submit">Save</Button>
