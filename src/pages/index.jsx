@@ -5,7 +5,6 @@ import Link from "next/link";
 import React from "react";
 import Login from "../organisms/login";
 
-
 const Page = () => {
 	return (
 		<Login>
@@ -20,10 +19,30 @@ const Page = () => {
 			<TextField id="outlined-basic" label="Password" variant="outlined" type="password" />
 			<br />
 			<br />
-			<Link passHref href="/home"><Button variant="outlined">Login</Button>
+			<Link passHref href="/home">
+				<Button variant="outlined">Login</Button>
 			</Link>
 		</Login>
 	);
 };
 
 export default Page;
+/*export const getServerSideProps = async ()
+	const isLoggedIn = true;
+
+	if (isLoggedIn) {
+		return {
+			props: {
+				data: {
+					foo: "Bar",
+				},
+			},
+		};
+	}
+	return {
+		redirect: {
+			permanent: false,
+			destination: "/home",
+		},
+	};
+};*/

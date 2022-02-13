@@ -8,7 +8,7 @@ const Page = () => {
 	return (
 		<Layout>
 			<div>Hallo {query.name}</div>
-			<NoteList />
+			<NoteList userId={query.id} />
 		</Layout>
 	);
 };

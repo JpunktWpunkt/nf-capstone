@@ -14,7 +14,6 @@ const Page = ({ users }) => {
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			{/*create const getStaticProps, will be changed later*/}
 			{users.map(user => {
 				return (
 					<Link key={user._id} passHref href={`/user/${user._id}?name=${user.username}`}>
@@ -25,7 +24,7 @@ const Page = ({ users }) => {
 		</Layout>
 	);
 };
-
+//serverside connection for security shit, the rest can be handle with axios i would try it on this point with getServerSideProps to learn this part !?
 export async function getServerSideProps() {
 	const { default: dbConnect } = await import("../../../database/index"); //dynamic promise Routing
 	const { default: User } = await import("../../../model/User.model");

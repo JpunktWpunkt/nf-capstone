@@ -1,24 +1,54 @@
-import DialogTitle from "@mui/material/DialogTitle";
-import CloseIcon from "@mui/icons-material/Close";
-import IconButton from "@mui/material/IconButton";
-import * as React from "react";
-import TextareaAutosize from "@mui/material/TextareaAutosize";
+import { Grid } from "@mui/material";
+import React, { useState } from "react";
+import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
+import Button from "@mui/material/Button";
+import axios from "axios";
 
-const NoteItem = ({ note }) => {
+const NoteItem = ({ userId, note }) => {
+	/*userID comes from getserversideprops home/ and note comes from noteList with axios, useState, useEffect*/
+	console.log("NoteItem userId", userId);
+	const [content, setContent] = useState("");
+	const [contentError, setContentError] = useState(false);
+
+	const handleSubmit = submitEvent => {
+		submitEvent.preventDefault();
+		/*	console.log(submitEvent.target.elements.noteContent.value);*/
+		setContentError(false);
+
+		if (content) {
+			console.log("for post: ", content);
+			axios.put("/api/notes", { content: content, userId: userId, noteId: note._id });
+		}
+	};
 	return (
-		<div>
-			<Card variant="outlined" sx={{ maxWidth: 345 }}>
-				<IconButton>
-					<TextareaAutosize
-						aria-label="empty textarea"
-						placeholder="Put your Notes here"
-						defaultValue={note.text}
-						style={{ width: 400, height: 400 }}
+		<Card className="noteItem" variant="outlined" sx={{ maxWidth: 345 }}>
+			<Grid container>
+				<Grid item xs={4}>
+					<Button> - Delete note</Button>
+				</Grid>
+				<form onSubmit={handleSubmit}>
+					<TextField
+						multiline
+						fullWidth
+						required
+						sx={{
+							marginTop: 5,
+							display: "block",
+						}}
+						variant="outlined"
+						color="secondary"
+						label="Put your notes here"
+						rows={6}
+						name="put"
+						error={contentError}
+						defaultValue={note.content}
+						onChange={e => setContent(e.target.value)}
 					/>
-				</IconButton>
-			</Card>
-		</div>
+					<Button type="submit">Save</Button>
+				</form>
+			</Grid>
+		</Card>
 	);
 };
 
