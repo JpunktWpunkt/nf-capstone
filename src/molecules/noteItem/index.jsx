@@ -21,11 +21,17 @@ const NoteItem = ({ userId, note }) => {
 			axios.put("/api/notes", { content: content, userId: userId, noteId: note._id });
 		}
 	};
+
+	const handleDelete = () => {
+		axios.delete("/api/notes", { params: { noteId: note._id } }).then(() => {
+			window.location.reload();
+		});
+	};
 	return (
 		<Card className="noteItem" variant="outlined" sx={{ maxWidth: 345 }}>
 			<Grid container>
 				<Grid item xs={4}>
-					<Button> - Delete note</Button>
+					<Button onClick={handleDelete}> - Delete note</Button>
 				</Grid>
 				<form onSubmit={handleSubmit}>
 					<TextField
