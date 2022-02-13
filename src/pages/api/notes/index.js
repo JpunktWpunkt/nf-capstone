@@ -1,7 +1,7 @@
 import Note from "../../../../model/note.model";
+import dbConnect from "../../../../database/index";
 
 const handler = async (request, response) => {
-	const { default: dbConnect } = await import("../../../../database/index");
 	const { method } = request;
 	await dbConnect;
 	console.log("handler", request.body);
