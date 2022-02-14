@@ -1,4 +1,5 @@
 import { Grid } from "@mui/material";
+import Router from "next/router";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
@@ -24,11 +25,12 @@ const NoteItem = ({ userId, note }) => {
 
 	const handleDelete = () => {
 		axios.delete("/api/notes", { params: { noteId: note._id } }).then(() => {
-			window.location.reload();
+			/*window.location.reload();*/
+			Router.reload();
 		});
 	};
 	return (
-		<Card className="noteItem" variant="outlined" sx={{ maxWidth: 345 }}>
+		<Card className="noteItem" variant="outlined">
 			<Grid container>
 				<Grid item xs={4}>
 					<Button onClick={handleDelete}> - Delete note</Button>
@@ -40,7 +42,7 @@ const NoteItem = ({ userId, note }) => {
 						required
 						sx={{
 							marginTop: 5,
-							display: "block",
+							display: "flex",
 						}}
 						variant="outlined"
 						color="secondary"

@@ -13,11 +13,6 @@ const Footer = () => {
 						Home
 					</Button>
 				</Link>
-				<Link passHref href="/home">
-					<Button color="inherit" variant="outlined">
-						+ Add note
-					</Button>
-				</Link>
 				©2022 JpunktWpunkt
 			</Toolbar>
 		</AppBar>

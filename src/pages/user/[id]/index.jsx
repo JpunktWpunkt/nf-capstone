@@ -4,12 +4,14 @@ import React from "react";
 import NoteList from "../../../molecules/noteList";
 import Layout from "../../../organisms/layout";
 import Button from "@mui/material/Button";
+import Router from "next/router";
 
 const Page = () => {
 	const { query } = useRouter();
 	const handleAddNote = () => {
 		axios.post("/api/notes", { userId: query.id });
-		window.location.reload();
+		/*	window.location.reload();*/
+		Router.reload();
 		console.log("page loaded");
 	};
 	return (
