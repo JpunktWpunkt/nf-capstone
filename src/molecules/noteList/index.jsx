@@ -1,6 +1,7 @@
 import axios from "axios";
 import * as React from "react";
 import NoteItem from "../noteItem";
+import { Grid } from "@contour/react";
 
 //runs client
 const NoteList = ({ userId }) => {
@@ -24,9 +25,11 @@ const NoteList = ({ userId }) => {
 	return (
 		<>
 			<h3>NoteList</h3>
-			{notes.map(note => {
-				return <NoteItem key={note._id} note={note} userId={userId} />;
-			})}
+			<Grid strategy="grid" colCount={{ s: 2, m: 2, l: 4, xl: 4 }}>
+				{notes.map(note => {
+					return <NoteItem key={note._id} note={note} userId={userId} />;
+				})}
+			</Grid>
 		</>
 	);
 };
