@@ -6,7 +6,8 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import axios from "axios";
 
-const NoteItem = ({ userId, note }) => {
+const NoteItem = ({ userId, note, setNotes }) => {
+	//parameter kommen vom parent noteList
 	/*userID comes from getserversideprops home/ and note comes from noteList with axios, useState, useEffect*/
 	console.log("NoteItem userId", userId);
 	const [content, setContent] = useState("");
@@ -23,11 +24,10 @@ const NoteItem = ({ userId, note }) => {
 		}
 	};
 
-	const handleDelete = () => {
-		axios.delete("/api/notes", { params: { noteId: note._id } }).then(() => {
-			/*window.location.reload();*/
-			Router.reload();
-		});
+	const handleDelete = async () => {
+		await axios.delete("/api/notes", { params: { noteId: note._id } });
+		const result = await axios.get("/api/notes", { params: { userId: userId } });
+		setNotes(result.data);
 	};
 	return (
 		<Card className="noteItem" variant="outlined">
