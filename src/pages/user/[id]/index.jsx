@@ -18,9 +18,17 @@ const Page = () => {
 		<Layout>
 			<div>Hallo {query.name}</div>
 			<NoteList userId={query.id} />
-			<Button onClick={handleAddNote}>+ Add Note</Button>
+			<Button className="add" onClick={handleAddNote}>
+				+ Add Note
+			</Button>
 		</Layout>
 	);
 };
 
 export default Page;
+
+/*<Link passHref href="/">
+	<Button color="inherit" variant="outlined">
+		Logout
+	</Button>
+</Link>*/

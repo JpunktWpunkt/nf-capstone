@@ -27,7 +27,7 @@ const NoteList = ({ userId }) => {
 			<h3>NoteList</h3>
 			<Grid strategy="grid" colCount={{ s: 2, m: 2, l: 4, xl: 4 }}>
 				{notes.map(note => {
-					return <NoteItem key={note._id} note={note} userId={userId} />;
+					return <NoteItem key={note._id} note={note} userId={userId} className={note} />;
 				})}
 			</Grid>
 		</>

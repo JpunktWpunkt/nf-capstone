@@ -1,29 +1,45 @@
+/*
 import Button from "@mui/material/Button";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 
 import Layout from "../../organisms/layout";
 
 // eslint-disable-next-line react/function-component-definition
 const Page = ({ users }) => {
+	const { data: session } = useSession();
 	console.log(users);
+	if (session) {
+		return (
+			<Layout>
+				<Head>
+					<title key="title">FamilyHub</title>
+					<meta key="description" name="description" content="This is my project" />
+				</Head>
+				{users.map(user => {
+					return (
+						<Link
+							key={user._id}
+							passHref
+							href={`/user/${user._id}?name=${user.username}`}
+						>
+							<Button variant="outlined">{user.username}</Button>
+						</Link>
+					);
+				})}
+			</Layout>
+		);
+	}
 	return (
-		<Layout>
-			<Head>
-				<title key="title">FamilyHub</title>
-				<meta key="description" name="description" content="This is my project" />
-			</Head>
-			{users.map(user => {
-				return (
-					<Link key={user._id} passHref href={`/user/${user._id}?name=${user.username}`}>
-						<Button variant="outlined">{user.username}</Button>
-					</Link>
-				);
-			})}
-		</Layout>
+		<>
+			Not signed in <br />
+			<Button onClick={() => signIn()}>Sign in</Button>
+		</>
 	);
 };
+
 //serverside connection for security shit, the rest can be handle with axios i would try it on this point with getServerSideProps to learn this part !?
 export async function getServerSideProps() {
 	const { default: dbConnect } = await import("../../../database/index"); //dynamic promise Routing
@@ -48,3 +64,4 @@ export async function getServerSideProps() {
 }
 
 export default Page;
+*/
