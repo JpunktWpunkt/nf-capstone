@@ -19,7 +19,7 @@ export const globalStyle = css`
 		padding-top: 3rem;
 	}
 
-	.add {
+	/*	.add {
 		position: relative;
 		bottom: 1.5rem;
 		background-color: #00798c;
@@ -29,7 +29,7 @@ export const globalStyle = css`
 		color: #fff;
 		font-size: 1.5rem;
 		width: 100vw;
-	}
+	}*/
 	/*	.note {
 		background-color: #fff;
 		box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.1);
