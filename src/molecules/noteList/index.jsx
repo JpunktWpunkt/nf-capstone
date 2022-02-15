@@ -1,3 +1,4 @@
+import Button from "@mui/material/Button";
 import axios from "axios";
 import * as React from "react";
 import NoteItem from "../noteItem";
@@ -22,6 +23,12 @@ const NoteList = ({ userId }) => {
 		return null;
 	}
 
+	const handleAddNote = async () => {
+		await axios.post("/api/notes", { userId: userId });
+		const result = await axios.get("/api/notes", { params: { userId: userId } });
+		setNotes(result.data);
+	};
+
 	return (
 		<>
 			<h3>NoteList</h3>
@@ -30,6 +37,9 @@ const NoteList = ({ userId }) => {
 					return <NoteItem key={note._id} note={note} userId={userId} className={note} />;
 				})}
 			</Grid>
+			<Button className="add" onClick={handleAddNote}>
+				+ Add Note
+			</Button>
 		</>
 	);
 };
