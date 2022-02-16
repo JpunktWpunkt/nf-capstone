@@ -8,7 +8,7 @@ const Footer = () => {
 	return (
 		<AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
 			<Toolbar>
-				<Link passHref href="/">
+				<Link passHref href="/home">
 					<Button color="inherit" variant="outlined">
 						Home
 					</Button>
