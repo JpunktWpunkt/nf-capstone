@@ -45,7 +45,7 @@ const NoteList = ({ userId }) => {
 					); //Methode setNotes wird von useState übergeben damit man im child (noteItem) den Zustand von parent verändern kann.
 				})}
 			</Grid>
-			<Button className="add" onClick={handleAddNote}>
+			<Button className="add" variant="contained" color="success" onClick={handleAddNote}>
 				+ Add Note
 			</Button>
 		</>

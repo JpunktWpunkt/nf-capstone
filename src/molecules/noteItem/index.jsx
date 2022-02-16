@@ -43,6 +43,7 @@ const NoteItem = ({ userId, note, setNotes }) => {
 						sx={{
 							marginTop: 5,
 							display: "flex",
+							backgroundColor: "#EDAE49",
 						}}
 						variant="outlined"
 						color="secondary"
