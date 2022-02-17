@@ -1,10 +1,18 @@
 import { Grid } from "@mui/material";
-import Router from "next/router";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import axios from "axios";
+
+const field = {
+	marginTop: 5,
+	marginLeft: 5,
+	marginRight: 5,
+	marginBottom: 5,
+	display: "flex",
+	backgroundColor: "#EDAE49",
+};
 
 const NoteItem = ({ userId, note, setNotes }) => {
 	//parameter kommen vom parent noteList
@@ -40,11 +48,7 @@ const NoteItem = ({ userId, note, setNotes }) => {
 						multiline
 						fullWidth
 						required
-						sx={{
-							marginTop: 5,
-							display: "flex",
-							backgroundColor: "#EDAE49",
-						}}
+						sx={{ ...field }}
 						variant="outlined"
 						color="secondary"
 						label="Put your notes here"

@@ -34,6 +34,14 @@ const theme = createTheme({
 				},
 			},
 		},
+		Container: {
+			styleOverride: {
+				root: {
+					backgroundColor: "#FFFF00",
+					color: "#30638E",
+				},
+			},
+		},
 
 		TextField: {
 			styleOverride: {

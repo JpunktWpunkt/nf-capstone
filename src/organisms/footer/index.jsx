@@ -17,9 +17,9 @@ const Footer = () => {
 						</CottageOutlinedIcon>
 					</Link>
 					<Button
-						onClick={() => console.log("Yeah")}
 						type="submit"
 						startIcon={<CottageOutlinedIcon variant="outlined" fontSize="large" />}
+						onClick={() => console.log("Yeah")}
 					>
 						Home
 					</Button>
