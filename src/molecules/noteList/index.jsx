@@ -1,21 +1,21 @@
 import { Paper } from "@mui/material";
 import Button from "@mui/material/Button";
+import Card from "@mui/material/Card";
 import axios from "axios";
 import * as React from "react";
 import NoteItem from "../noteItem";
 import { Grid } from "@contour/react";
 import Container from "@mui/material/Container";
 
-//TODO das hiermöchte ich gerne auslagern in die Theme datei
+//TODO das hier möchte ich gerne auslagern in die Theme datei, ausserdem ist der bottom geschummelt....lieber wäre mir, er würde automatisch am Footer kleben
 const btn = {
 	display: "flex",
-	justifyContent: "center",
 	position: "fixed",
 	width: "100vw",
-	zIndex: 2,
+	zIndex: 1,
 	left: 0,
 	fontSize: 20,
-	bottom: 50,
+	bottom: 70,
 	backgroundColor: "#5B764A",
 };
 
@@ -33,7 +33,7 @@ const NoteList = ({ userId }) => {
 			setNotes(result.data);
 		};
 		items();
-	}, [userId]); //wird als parameter hier eingefügt, um sie für den Axios zu nutzen
+	}, [userId]); //wird als Parameter hier eingefügt, um sie für den Axios zu nutzen
 
 	if (!notes) {
 		return null;
@@ -53,23 +53,20 @@ const NoteList = ({ userId }) => {
 				<Grid strategy="grid" colCount={{ s: 1, m: 2, l: 3, xl: 4 }}>
 					{notes.map(note => {
 						return (
-							<NoteItem
-								key={note._id}
-								note={note}
-								userId={userId}
-								className={note}
-								setNotes={setNotes}
-							/>
+							<Card>
+								<NoteItem
+									key={note._id}
+									note={note}
+									userId={userId}
+									className={note}
+									setNotes={setNotes}
+								/>
+							</Card>
 						); //Methode setNotes wird von useState übergeben damit man im child (noteItem) den Zustand von parent verändern kann.
 					})}
 				</Grid>
 				<div style={{ display: "flex", flexDirection: "column" }}>
-					<Button
-						variant="contained"
-						color="success"
-						sx={{ ...btn }}
-						onClick={handleAddNote}
-					>
+					<Button variant="contained" sx={{ ...btn }} onClick={handleAddNote}>
 						+ Add Note
 					</Button>
 				</div>

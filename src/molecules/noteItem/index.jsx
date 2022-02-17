@@ -6,11 +6,11 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 
 const field = {
+	display: "flex",
 	marginTop: 5,
 	marginLeft: 5,
 	marginRight: 5,
 	marginBottom: 5,
-	display: "flex",
 	backgroundColor: "#EDAE49",
 };
 

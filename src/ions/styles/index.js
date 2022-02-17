@@ -13,6 +13,5 @@ export const globalStyle = css`
 
 	body {
 		margin: 0;
-		justify-content: space-around;
 	}
 `;
