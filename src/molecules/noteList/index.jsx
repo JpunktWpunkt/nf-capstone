@@ -6,15 +6,17 @@ import NoteItem from "../noteItem";
 import { Grid } from "@contour/react";
 import Container from "@mui/material/Container";
 
+//TODO das hiermöchte ich gerne auslagern in die Theme datei
 const btn = {
 	display: "flex",
 	justifyContent: "center",
 	position: "fixed",
+	width: "100vw",
 	zIndex: 2,
 	left: 0,
-	fontSize: 30,
+	fontSize: 20,
 	bottom: 50,
-	backgroundColor: "#00798C",
+	backgroundColor: "#5B764A",
 };
 
 //runs client, die auf Z.16-26 gefetchte User-ID wird hier übergeben

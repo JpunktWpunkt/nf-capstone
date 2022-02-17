@@ -2,7 +2,6 @@ import AppBar from "@mui/material/AppBar";
 import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import axios from "axios";
-import Link from "next/link";
 import React from "react";
 
 const btn = {
