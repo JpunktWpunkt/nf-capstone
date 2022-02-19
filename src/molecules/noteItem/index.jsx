@@ -6,8 +6,31 @@ import axios from "axios";
 
 const field = {
 	display: "flex",
-	flexDirection: "column",
+	flexDirection: "center",
 	backgroundColor: "#EDAE49",
+	borderRadius: "0 0 0 0",
+};
+
+const btnDelete = {
+	backgroundColor: "#D1495B",
+	borderRadius: "0 0 0 0",
+	/*		display: "flex",
+		position: "fixed",
+		width: "100vw",
+		zIndex: 1,
+		left: 0,
+		fontSize: "1.5rem",
+		bottom: "3.5rem",
+		background: "linear-gradient( 45deg, #5B764A 50%, #30638E 100%)",
+		padding: "0.5rem 1rem",*/
+};
+
+const btnSave = {
+	borderRadius: "0 0 6px 6px",
+	/*	width: "100vw",
+	fontSize: "1rem",
+	background: "primary",
+	padding: "0.5rem 1rem",*/
 };
 
 const NoteItem = ({ userId, note, setNotes }) => {
@@ -35,7 +58,7 @@ const NoteItem = ({ userId, note, setNotes }) => {
 	};
 	return (
 		<Card className="noteItem" variant="outlined">
-			<Button sx={{ display: "flex", backgroundColor: "#D1495B" }} onClick={handleDelete}>
+			<Button sx={{ ...btnDelete }} onClick={handleDelete}>
 				{" "}
 				- Delete note
 			</Button>
@@ -54,7 +77,9 @@ const NoteItem = ({ userId, note, setNotes }) => {
 					onChange={e => setContent(e.target.value)}
 				/>
 				<div style={{ display: "flex", flexDirection: "column" }}>
-					<Button type="submit">Save</Button>
+					<Button type="submit" sx={{ ...btnSave }}>
+						Save
+					</Button>
 				</div>
 			</form>
 		</Card>

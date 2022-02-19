@@ -1,14 +1,22 @@
 import { Container } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import React from "react";
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
 
+const abs = {
+	display: "flex",
+	position: "fixed",
+	background: "linear-gradient(45deg, #30638E 50%, #5B764A 100%)",
+	padding: "0.5rem 0.5rem",
+	top: "auto",
+	bottom: 0,
+};
 const Footer = () => {
 	return (
-		<AppBar position="fixed" color="primary" sx={{ top: "auto", bottom: 0 }}>
+		<AppBar position="fixed" color="primary" sx={{ ...abs }}>
 			<Container>
 				<Toolbar>
 					<Link passHref href="/">
@@ -16,14 +24,7 @@ const Footer = () => {
 							Home
 						</CottageOutlinedIcon>
 					</Link>
-					<Button
-						type="submit"
-						startIcon={<CottageOutlinedIcon variant="outlined" fontSize="large" />}
-						onClick={() => console.log("Yeah")}
-					>
-						Home
-					</Button>
-					©2022 JpunktWpunkt
+					<Typography variant="h6">©2022 JpunktWpunkt</Typography>
 				</Toolbar>
 			</Container>
 		</AppBar>

@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import React from "react";
 import Footer from "../footer";
@@ -10,8 +11,8 @@ const Layout = ({ children }) => {
 	if (session) {
 		return (
 			<>
-				<Header />
-				<main>{children}</main>
+				<Header marginBottom="2em" />
+				<Box>{children}</Box>
 				<Footer />
 			</>
 		);

@@ -8,20 +8,15 @@ import Typography from "@mui/material/Typography";
 import { useSession, signIn, signOut } from "next-auth/react";
 /*import logo2 from "../../images/familyhub.svg";*/
 import logo from "../../images/familyhub300x300_3d.png";
-/*import logo from "../../images/familyhub300x300.png";*/
+/*import logo2 from "../../images/familyhub300x300.png";*/
 import logo2 from "../../images/familyhubschriftwhite.png";
 
 const abs = {
-	borderRadius: "0 0 6px 6px",
+	borderRadius: "0 0 10px 10px",
 	display: "flex",
 	position: "fixed",
-	/*	width: "100vw",
-	zIndex: 1,
-	left: 0,
-	fontSize: "1.5rem",
-	bottom: "3.5rem",*/
-	background: "linear-gradient( 45deg, #30638E 50%, #5B764A 100%)",
-	padding: "0.5rem 1rem",
+	background: "linear-gradient(45deg, #30638E 50%, #5B764A 100%)",
+	padding: "0.5rem 0.5rem",
 };
 
 const Header = () => {

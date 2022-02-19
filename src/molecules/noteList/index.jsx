@@ -1,4 +1,3 @@
-import { Paper } from "@mui/material";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import axios from "axios";
@@ -8,7 +7,7 @@ import { Grid } from "@contour/react";
 import Container from "@mui/material/Container";
 
 //TODO das hier möchte ich gerne auslagern in die Theme datei, ausserdem ist der bottom geschummelt....lieber wäre mir, er würde automatisch am Footer kleben
-const btn = {
+const btnAdd = {
 	borderRadius: "6px 6px 0 0",
 	display: "flex",
 	position: "fixed",
@@ -16,8 +15,8 @@ const btn = {
 	zIndex: 1,
 	left: 0,
 	fontSize: "1.5rem",
-	bottom: "3.5rem",
-	background: "linear-gradient( 45deg, #5B764A 50%, #30638E 100%)",
+	bottom: "4.5rem",
+	background: "#5B764A",
 	padding: "0.5rem 1rem",
 };
 
@@ -49,34 +48,29 @@ const NoteList = ({ userId }) => {
 	};
 
 	return (
-		<>
-			<Container>
-				<h3>NoteList</h3>
-				<Grid strategy="grid" colCount={{ s: 1, m: 2, l: 3, xl: 4 }}>
-					{notes.map(note => {
-						return (
-							<Card elevation={3}>
-								<NoteItem
-									key={note._id}
-									note={note}
-									userId={userId}
-									className={note}
-									setNotes={setNotes}
-								/>
-							</Card>
-						); //Methode setNotes wird von useState übergeben damit man im child (noteItem) den Zustand von parent verändern kann.
-					})}
-				</Grid>
-				<div style={{ display: "flex", flexDirection: "column" }}>
-					<Button variant="contained" sx={{ ...btn }} onClick={handleAddNote}>
-						+ Add Note
-					</Button>
-				</div>
-			</Container>
-			<Container height="80" width="auto">
-				{/*	<NodesFooter />*/}
-			</Container>
-		</>
+		<Container>
+			<h3>NoteList</h3>
+			<Grid strategy="grid" colCount={{ s: 1, m: 2, l: 3, xl: 4 }}>
+				{notes.map(note => {
+					return (
+						<Card elevation={3}>
+							<NoteItem
+								key={note._id}
+								note={note}
+								userId={userId}
+								className={note}
+								setNotes={setNotes}
+							/>
+						</Card>
+					); //Methode setNotes wird von useState übergeben damit man im child (noteItem) den Zustand von parent verändern kann.
+				})}
+			</Grid>
+			<div style={{ display: "flex", flexDirection: "column" }}>
+				<Button variant="contained" sx={{ ...btnAdd }} onClick={handleAddNote}>
+					+ Add Note
+				</Button>
+			</div>
+		</Container>
 	);
 };
 
