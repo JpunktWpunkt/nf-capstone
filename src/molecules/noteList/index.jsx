@@ -53,7 +53,7 @@ const NoteList = ({ userId }) => {
 				<Grid strategy="grid" colCount={{ s: 1, m: 2, l: 3, xl: 4 }}>
 					{notes.map(note => {
 						return (
-							<Card>
+							<Card elevation={3}>
 								<NoteItem
 									key={note._id}
 									note={note}

@@ -1,5 +1,4 @@
 import Button from "@mui/material/Button";
-import Link from "next/link";
 import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -12,7 +11,7 @@ const Header = () => {
 	if (session) {
 		return (
 			<Box sx={{ flexGrow: 1 }}>
-				<AppBar position="static">
+				<AppBar position="fixed">
 					<Toolbar>
 						<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
 							FamilyHub

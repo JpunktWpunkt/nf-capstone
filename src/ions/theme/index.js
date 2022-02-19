@@ -2,15 +2,28 @@ import { createTheme } from "@mui/material/styles";
 //TODO hier noch anpassen
 const theme = createTheme({
 	palette: {
+		mode: "light",
 		primary: {
 			main: "#00798C",
 			contrastText: "#fff",
 		},
-		mode: "light",
+		secondary: {
+			main: "#D1495B",
+		},
 	},
+	/*	palette: {
+		mode: "light",
+		primary: {
+			main: "#00798C",
+			contrastText: "#fff",
+		},
+		secondary: {
+			main: "#D1495B",
+		},
+	},*/
 	typography: {
 		h2: {
-			fontFamily: "fantasy",
+			fontFamily: "Roboto",
 		},
 		h3: {
 			fontFamily: "serif",

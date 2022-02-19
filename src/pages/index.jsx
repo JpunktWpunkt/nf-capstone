@@ -1,10 +1,11 @@
+import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
-import Card from "@mui/material/Card";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
-
 import Layout from "../organisms/layout";
+import Image from "next/image";
+import logo from "../images/logo_familyhub.png";
 
 //TODO BTN und CRD Gap funktioniert nicht, evtl. Cards falsch umrandet, nochmal checken
 const btn = {
@@ -12,14 +13,6 @@ const btn = {
 	width: "80vw",
 	rowGap: 10,
 	left: 0,
-	fontSize: 25,
-};
-
-const crd = {
-	display: "flex",
-	justifyContent: "center",
-	alignContent: "center",
-	rowGap: 10,
 	fontSize: 25,
 };
 
@@ -32,9 +25,13 @@ const Page = ({ users }) => {
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			{users.map(user => {
-				return (
-					<Card sx={{ ...crd }}>
+			{/*			<div>
+				<Image src={logo} alt="logo" display="flex" justifyContent="center" />
+			</div>*/}
+			<Box display="flex" flexWrap="wrap" justifyContent="center">
+				<Image src={logo} alt="logo" />
+				{users.map(user => {
+					return (
 						<Link
 							key={user._id}
 							passHref
@@ -44,9 +41,9 @@ const Page = ({ users }) => {
 								{user.username}
 							</Button>
 						</Link>
-					</Card>
-				);
-			})}
+					);
+				})}
+			</Box>
 		</Layout>
 	);
 };

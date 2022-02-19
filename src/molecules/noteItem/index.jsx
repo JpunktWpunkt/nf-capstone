@@ -1,4 +1,3 @@
-import { Grid } from "@mui/material";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
@@ -7,10 +6,7 @@ import axios from "axios";
 
 const field = {
 	display: "flex",
-	marginTop: 5,
-	marginLeft: 5,
-	marginRight: 5,
-	marginBottom: 5,
+	flexDirection: "column",
 	backgroundColor: "#EDAE49",
 };
 
@@ -39,28 +35,28 @@ const NoteItem = ({ userId, note, setNotes }) => {
 	};
 	return (
 		<Card className="noteItem" variant="outlined">
-			<Grid container>
-				<Grid item xs={4}>
-					<Button onClick={handleDelete}> - Delete note</Button>
-				</Grid>
-				<form onSubmit={handleSubmit}>
-					<TextField
-						multiline
-						fullWidth
-						required
-						sx={{ ...field }}
-						variant="outlined"
-						color="secondary"
-						label="Put your notes here"
-						rows={6}
-						name="put"
-						error={contentError}
-						defaultValue={note.content}
-						onChange={e => setContent(e.target.value)}
-					/>
+			<Button sx={{ display: "flex", backgroundColor: "#D1495B" }} onClick={handleDelete}>
+				{" "}
+				- Delete note
+			</Button>
+			<form onSubmit={handleSubmit}>
+				<TextField
+					multiline
+					fullWidth
+					required
+					sx={{ ...field }}
+					variant="outlined"
+					color="secondary"
+					rows={6}
+					name="put"
+					error={contentError}
+					defaultValue={note.content}
+					onChange={e => setContent(e.target.value)}
+				/>
+				<div style={{ display: "flex", flexDirection: "column" }}>
 					<Button type="submit">Save</Button>
-				</form>
-			</Grid>
+				</div>
+			</form>
 		</Card>
 	);
 };
