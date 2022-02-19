@@ -12,7 +12,9 @@ const Layout = ({ children }) => {
 		return (
 			<>
 				<Header marginBottom="2em" />
-				<Box>{children}</Box>
+				<Box marginTop="10em" marginBottom="8em">
+					{children}
+				</Box>
 				<Footer />
 			</>
 		);

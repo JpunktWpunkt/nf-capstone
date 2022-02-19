@@ -16,15 +16,23 @@ const abs = {
 };
 const Footer = () => {
 	return (
-		<AppBar position="fixed" color="primary" sx={{ ...abs }}>
+		<AppBar sx={{ ...abs }}>
 			<Container>
-				<Toolbar>
+				<Toolbar display="flex" justifyContent="space-between">
 					<Link passHref href="/">
-						<CottageOutlinedIcon variant="outlined" fontSize="large">
+						<CottageOutlinedIcon
+							display="flex"
+							justifyContent="flex-start"
+							variant="outlined"
+							fontSize="large"
+						>
 							Home
 						</CottageOutlinedIcon>
 					</Link>
-					<Typography variant="h6">©2022 JpunktWpunkt</Typography>
+
+					<Typography marginLeft="15rem" fontSize="0.8rem">
+						©2022 JpunktWpunkt
+					</Typography>
 				</Toolbar>
 			</Container>
 		</AppBar>
