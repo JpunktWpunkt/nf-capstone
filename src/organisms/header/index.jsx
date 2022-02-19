@@ -25,13 +25,16 @@ const Header = () => {
 		return (
 			<Box sx={{ flexGrow: 0 }}>
 				<AppBar sx={{ ...abs }} position="fixed">
+					<Typography marginLeft="8rem" variant="h6">
+						Signed in as {session.user.email}
+					</Typography>
 					<Toolbar>
 						<Typography component="div" sx={{ flexGrow: 1 }}>
 							<Image
 								src={logo}
 								alt="logo"
-								width="100vw"
-								height="100vw"
+								width="80vw"
+								height="80vw"
 								justifyContent="left"
 							/>
 							<Image src={logo2} alt="logo" justifyContent="left" />
@@ -41,7 +44,6 @@ const Header = () => {
 							Logout
 						</Button>
 					</Toolbar>
-					<Typography variant="h6">Signed in as {session.user.email}</Typography>
 				</AppBar>
 			</Box>
 		);

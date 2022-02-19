@@ -3,6 +3,8 @@ import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import SaveIcon from "@material-ui/icons/Save";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
 
 const field = {
 	display: "flex",
@@ -58,10 +60,11 @@ const NoteItem = ({ userId, note, setNotes }) => {
 	};
 	return (
 		<Card className="noteItem" variant="outlined">
-			<Button sx={{ ...btnDelete }} onClick={handleDelete}>
-				{" "}
-				- Delete note
-			</Button>
+			<div style={{ display: "flex", flexDirection: "column" }}>
+				<Button sx={{ ...btnDelete }} onClick={handleDelete}>
+					<DeleteForeverIcon /> - Delete note
+				</Button>
+			</div>
 			<form onSubmit={handleSubmit}>
 				<TextField
 					multiline
@@ -78,6 +81,7 @@ const NoteItem = ({ userId, note, setNotes }) => {
 				/>
 				<div style={{ display: "flex", flexDirection: "column" }}>
 					<Button type="submit" sx={{ ...btnSave }}>
+						<SaveIcon />
 						Save
 					</Button>
 				</div>

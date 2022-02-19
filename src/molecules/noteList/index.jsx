@@ -1,5 +1,6 @@
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
 import axios from "axios";
 import * as React from "react";
 import NoteItem from "../noteItem";
@@ -49,7 +50,9 @@ const NoteList = ({ userId }) => {
 
 	return (
 		<Container>
-			<h3>NoteList</h3>
+			<Typography variant="14">
+				welcome to your Noteboard !You can read, write update or delete your pins.
+			</Typography>
 			<Grid strategy="grid" colCount={{ s: 1, m: 2, l: 3, xl: 4 }}>
 				{notes.map(note => {
 					return (

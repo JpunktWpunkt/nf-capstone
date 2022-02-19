@@ -1,5 +1,6 @@
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
@@ -40,6 +41,12 @@ const Page = ({ users }) => {
 						</Link>
 					);
 				})}
+			</Box>
+			<Box marginTop="1em" display="flex" justifyContent="center">
+				<Typography width="80vw" color="primary">
+					These are the users of your peergroup, go in there and look at the notes or
+					create some. Select here which user notes you want to view.{" "}
+				</Typography>
 			</Box>
 		</Layout>
 	);
