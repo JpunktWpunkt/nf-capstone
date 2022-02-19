@@ -25,9 +25,6 @@ const Page = ({ users }) => {
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			{/*			<div>
-				<Image src={logo} alt="logo" display="flex" justifyContent="center" />
-			</div>*/}
 			<Box display="flex" flexWrap="wrap" justifyContent="center">
 				<Image src={logo} alt="logo" />
 				{users.map(user => {

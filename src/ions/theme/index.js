@@ -25,9 +25,9 @@ const theme = createTheme({
 		h2: {
 			fontFamily: "Roboto",
 		},
-		h3: {
+		h6: {
 			fontFamily: "serif",
-			fontWeight: 700,
+			fontSize: "14px",
 		},
 		shape: {
 			borderRadius: 16,

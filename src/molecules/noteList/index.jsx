@@ -9,14 +9,16 @@ import Container from "@mui/material/Container";
 
 //TODO das hier möchte ich gerne auslagern in die Theme datei, ausserdem ist der bottom geschummelt....lieber wäre mir, er würde automatisch am Footer kleben
 const btn = {
+	borderRadius: "6px 6px 0 0",
 	display: "flex",
 	position: "fixed",
 	width: "100vw",
 	zIndex: 1,
 	left: 0,
-	fontSize: 20,
-	bottom: 70,
-	backgroundColor: "#5B764A",
+	fontSize: "1.5rem",
+	bottom: "3.5rem",
+	background: "linear-gradient( 45deg, #5B764A 50%, #30638E 100%)",
+	padding: "0.5rem 1rem",
 };
 
 //runs client, die auf Z.16-26 gefetchte User-ID wird hier übergeben

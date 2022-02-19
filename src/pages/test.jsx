@@ -5,7 +5,7 @@ import React from "react";
 import Layout from "../organisms/layout";
 import Image from "next/image";
 import logo from "../images/logo_familyhub.png";
-import logo2 from "../images/familiyhub300x300light_3d.png";
+import logo2 from "../images/familyhub300x300light_3d.png";
 
 const Page = () => {
 	return (
