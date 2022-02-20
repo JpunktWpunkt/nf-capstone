@@ -1,3 +1,4 @@
+import Box from "@mui/material/Box";
 import React from "react";
 import Header from "./header";
 
@@ -5,7 +6,9 @@ const Login = ({ children }) => {
 	return (
 		<>
 			<Header />
-			<main>{children}</main>
+			<Box marginTop="8em" marginBottom="8em">
+				{children}
+			</Box>
 		</>
 	);
 };

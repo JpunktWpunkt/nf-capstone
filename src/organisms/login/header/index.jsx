@@ -1,26 +1,39 @@
-import Button from "@mui/material/Button";
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import Image from "next/image";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import logo from "../../../images/familyhub300x300_3d.png";
+import logo2 from "../../../images/familyhubschriftwhite.png";
 
+const abs = {
+	borderRadius: "0 0 10px 10px",
+	display: "flex",
+	position: "fixed",
+	background: "linear-gradient(45deg, #30638E 50%, #5B764A 100%)",
+	padding: "0.5rem 0.5rem",
+};
 
-
-
-
- const Header = () => {
+const Header = () => {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar position="static">
+			<AppBar sx={{ ...abs }} position="static">
 				<Toolbar>
-					<Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-						FamilyHub
+					<Typography component="div" sx={{ flexGrow: 1 }}>
+						<Image
+							src={logo}
+							alt="logo"
+							width="80vw"
+							height="80vw"
+							justifyContent="left"
+						/>
+						<Image src={logo2} alt="logo" justifyContent="left" />
 					</Typography>
 				</Toolbar>
 			</AppBar>
 		</Box>
 	);
-}
+};
 
 export default Header;

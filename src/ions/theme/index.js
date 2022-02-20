@@ -1,21 +1,33 @@
-import { IconButton } from "@mui/material";
 import { createTheme } from "@mui/material/styles";
-
+//TODO hier noch anpassen
 const theme = createTheme({
 	palette: {
+		mode: "light",
 		primary: {
-			main: "#F0A0F0",
-			contrastText: "#00FFFF",
+			main: "#00798C",
+			contrastText: "#fff",
 		},
-		mode: "dark",
+		secondary: {
+			main: "#D1495B",
+		},
 	},
+	/*	palette: {
+		mode: "light",
+		primary: {
+			main: "#00798C",
+			contrastText: "#fff",
+		},
+		secondary: {
+			main: "#D1495B",
+		},
+	},*/
 	typography: {
 		h2: {
-			fontFamily: "fantasy",
+			fontFamily: "Roboto",
 		},
-		h3: {
+		h6: {
 			fontFamily: "serif",
-			fontWeight: 700,
+			fontSize: "14px",
 		},
 		shape: {
 			borderRadius: 16,
@@ -31,16 +43,24 @@ const theme = createTheme({
 			styleOverride: {
 				//global alles rund ausser Button
 				root: {
-					borderRadius: 0,
+					borderRadius: 30,
+				},
+			},
+		},
+		Container: {
+			styleOverride: {
+				root: {
+					backgroundColor: "#FFFF00",
+					color: "#30638E",
 				},
 			},
 		},
 
-		MuiCard: {
+		TextField: {
 			styleOverride: {
 				root: {
 					backgroundColor: "#FFFF00",
-					color: "#000000",
+					color: "#30638E",
 				},
 			},
 		},
@@ -70,10 +90,10 @@ const theme = createTheme({
 				root: {
 					borderRadius: 0,
 					backgroundColor: "#FF0000",
-					color: "#000000",
+					color: "#30638E",
 					"&:hover": {
 						backgroundColor: "#00FF00",
-						color: "#000000",
+						color: "#30638E",
 					},
 				},
 			},

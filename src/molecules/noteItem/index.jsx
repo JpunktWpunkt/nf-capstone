@@ -1,10 +1,39 @@
-import { Grid } from "@mui/material";
-import Router from "next/router";
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import axios from "axios";
+import SaveIcon from "@material-ui/icons/Save";
+import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+
+const field = {
+	display: "flex",
+	flexDirection: "center",
+	backgroundColor: "#EDAE49",
+	borderRadius: "0 0 0 0",
+};
+
+const btnDelete = {
+	backgroundColor: "#D1495B",
+	borderRadius: "0 0 0 0",
+	/*		display: "flex",
+		position: "fixed",
+		width: "100vw",
+		zIndex: 1,
+		left: 0,
+		fontSize: "1.5rem",
+		bottom: "3.5rem",
+		background: "linear-gradient( 45deg, #5B764A 50%, #30638E 100%)",
+		padding: "0.5rem 1rem",*/
+};
+
+const btnSave = {
+	borderRadius: "0 0 6px 6px",
+	/*	width: "100vw",
+	fontSize: "1rem",
+	background: "primary",
+	padding: "0.5rem 1rem",*/
+};
 
 const NoteItem = ({ userId, note, setNotes }) => {
 	//parameter kommen vom parent noteList
@@ -31,31 +60,32 @@ const NoteItem = ({ userId, note, setNotes }) => {
 	};
 	return (
 		<Card className="noteItem" variant="outlined">
-			<Grid container>
-				<Grid item xs={4}>
-					<Button onClick={handleDelete}> - Delete note</Button>
-				</Grid>
-				<form onSubmit={handleSubmit}>
-					<TextField
-						multiline
-						fullWidth
-						required
-						sx={{
-							marginTop: 5,
-							display: "flex",
-						}}
-						variant="outlined"
-						color="secondary"
-						label="Put your notes here"
-						rows={6}
-						name="put"
-						error={contentError}
-						defaultValue={note.content}
-						onChange={e => setContent(e.target.value)}
-					/>
-					<Button type="submit">Save</Button>
-				</form>
-			</Grid>
+			<div style={{ display: "flex", flexDirection: "column" }}>
+				<Button sx={{ ...btnDelete }} onClick={handleDelete}>
+					<DeleteForeverIcon /> - Delete note
+				</Button>
+			</div>
+			<form onSubmit={handleSubmit}>
+				<TextField
+					multiline
+					fullWidth
+					required
+					sx={{ ...field }}
+					variant="outlined"
+					color="secondary"
+					rows={6}
+					name="put"
+					error={contentError}
+					defaultValue={note.content}
+					onChange={e => setContent(e.target.value)}
+				/>
+				<div style={{ display: "flex", flexDirection: "column" }}>
+					<Button type="submit" sx={{ ...btnSave }}>
+						<SaveIcon />
+						Save
+					</Button>
+				</div>
+			</form>
 		</Card>
 	);
 };

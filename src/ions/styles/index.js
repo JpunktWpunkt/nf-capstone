@@ -10,7 +10,6 @@ export const globalStyle = css`
 	html {
 		font-size: 16px;
 	}
-
 	body {
 		margin: 0;
 	}
