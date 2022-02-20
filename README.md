@@ -1,128 +1,16 @@
-# Next App
+# Capstone Project
 
-This is a template for a Next.js app.
+This is my Capstone Project from my Bootcamp by neue Fische
 
-It uses the following tools/libraries:
+## FamilyHub
+*GESELLENSTÜCK
 
-* [Storybook](https://storybook.js.org/)
-* [Cypress](https://cypress.io/)
-* [Jest](https://jestjs.io/)
-* [Commitlint](https://commitlint.js.org/)
-* [Stylelint](https://stylelint.io/)
-* [Eslint](https://eslint.org/)
-* [Prettier](https://prettier.io/)
+###FAMILYHUB
+The FamilyHub facilitates the organizational daily life of the peer group. With any number of registered users in a peer group, the app is particularly concerned with getting an overview of one's notes as easily as possible without getting bogged down in one's message groups.  Each user has his own notes, which it can view, delete, edit and create from anywhere. Other planned features include a timestamp, a reminder function or the connection to calendar systems and the creation of multiple peer groups. The shared shopping list allows all users in the group to quickly and easily add items they need to the list.
 
-## Getting started
+###Tech Stack
+JavaScript | React.js | Next.js | NextAuth | MongoDB | Axios | Mongoose | Material UI | CSS
 
-**Run the development server:**
-
-```bash
-npm run dev
-```
-
-**Run storybook:**
-
-```shell
-npm run storybook
-```
-
-
-## Atomic design
-
-We use atomic design. You can read more about our decision in the
-[documentation](./docs/ATOMIC_DESIGN.md).
-
-## Behavior Driven Development
-
-We use behavior tests. You can read more about our decision in the
-[documentation](./docs/BEHAVIOR_DRIVEN_DEVELOPMENT.md).
-
-## Test Driven Development
-
-We jest to write unit tests. Please look at the Documentation for [Jest](https://jestjs.io/)
-and [testing-library](https://testing-library.com/docs/react-testing-library/intro/).
-
-## Commitlint
-
-We use commitlint to ensure conventional commit messages. You can read more about our decision in
-the [documentation](./docs/COMMITS.md).
-
-
-## Commands
-
-**Run the development server:**
-
-```bash
-npm run dev
-```
-
-**Build:**
-
-```shell
-npm run build
-```
-
-**Run storybook:**
-
-```shell
-npm run storybook
-```
-
-**Build storybook:**
-
-```shell
-npm run storybook:build
-```
-
-**Run e2e tests:**
-
-```shell
-npm run cypress # local without server
-# npm run cypress:run # headless
-# npm run test:e2e # with server
-```
-
-**Run unit tests:**
-
-```shell
-npm run jest
-# npm run jest:watch # watch
-# npm run test:unit # same as "npm run jest"
-```
-
-**Run all tests:**
-
-```shell
-npm run test
-```
-
-**Run stylelint**
-
-```shell
-npm run stylelint
-```
-
-**Run eslint**
-
-```shell
-npm run eslint
-```
-
-**Run all linters**
-
-```shell
-npm run lint
-```
-
-## Skipping linters
-
-If you need to skip a linter you can add the `--no-verify` flag.
-
-> Warning! We strongly advise against skipping linters.
-
-```shell
-# Skipping commitlint
-git commit README.md -m "this is a dirty commit" --no-verify
-# Skipping linters
-git push --no-verify
-```
+![Mockup–familiyHub_unterwegs_small](https://user-images.githubusercontent.com/92968754/154835850-fbf31caf-d1a7-4b69-bd24-cd246f8da1c9.png)
+![Mockup–familiyHub–family-note_smaller](https://user-images.githubusercontent.com/92968754/154835893-fbf65388-7d6f-4036-bcab-86a017220136.png)
+![Mockup–familiyHub–family-main_smaller](https://user-images.githubusercontent.com/92968754/154835905-7599e9ea-73ee-4a7d-aac8-50d47f2bad8c.png)
