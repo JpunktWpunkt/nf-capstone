@@ -11,6 +11,6 @@ The FamilyHub facilitates the organizational daily life of the peer group. With 
 ###Tech Stack
 JavaScript | React.js | Next.js | NextAuth | MongoDB | Axios | Mongoose | Material UI | CSS
 
-![Mockup–familiyHub_unterwegs_small](https://user-images.githubusercontent.com/92968754/154835850-fbf31caf-d1a7-4b69-bd24-cd246f8da1c9.png)
-![Mockup–familiyHub–family-note_smaller](https://user-images.githubusercontent.com/92968754/154835893-fbf65388-7d6f-4036-bcab-86a017220136.png)
 ![Mockup–familiyHub–family-main_smaller](https://user-images.githubusercontent.com/92968754/154835905-7599e9ea-73ee-4a7d-aac8-50d47f2bad8c.png)
+![Mockup–familiyHub–family-note_smaller](https://user-images.githubusercontent.com/92968754/154835893-fbf65388-7d6f-4036-bcab-86a017220136.png)
+![Mockup–familiyHub_unterwegs_small](https://user-images.githubusercontent.com/92968754/154835850-fbf31caf-d1a7-4b69-bd24-cd246f8da1c9.png)
