@@ -34,9 +34,9 @@ const AddUserForm = () => {
 	};
 
 	const handleAddUser = async () => {
-		console.log("User: " + username);
 		await axios.post("/api/users", { username: username }); //1,Parameter aus der DB 2.Parameter aus useState
 		setOpen(false);
+		window.location.reload();
 	};
 
 	return (
