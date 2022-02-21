@@ -7,6 +7,7 @@ import React from "react";
 import Layout from "../organisms/layout";
 import Image from "next/image";
 import logo from "../images/logo_familyhub.png";
+import AddUserForm from "../molecules/addUserForm";
 
 //TODO BTN und CRD Gap funktioniert nicht, evtl. Cards falsch umrandet, nochmal checken
 const btn = {
@@ -15,6 +16,7 @@ const btn = {
 	rowGap: 10,
 	left: 0,
 	fontSize: 25,
+	margin: "100",
 };
 
 // eslint-disable-next-line react/function-component-definition
@@ -26,8 +28,10 @@ const Page = ({ users }) => {
 				<title key="title">FamilyHub</title>
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
-			<Box display="flex" flexWrap="wrap" justifyContent="center">
+			<Box display="flex" justifyContent="center">
 				<Image src={logo} alt="logo" />
+			</Box>
+			<Box display="grid" flexWrap="wrap" justifyContent="center" sx={{ rowGap: 1 }}>
 				{users.map(user => {
 					return (
 						<Link
@@ -47,6 +51,7 @@ const Page = ({ users }) => {
 					These are the users of your peergroup, go in there and look at the notes or
 					create some. Select here which user notes you want to view.{" "}
 				</Typography>
+				<AddUserForm />
 			</Box>
 		</Layout>
 	);
