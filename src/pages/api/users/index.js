@@ -1,4 +1,3 @@
-import Note from "../../../../model/note.model";
 import User from "../../../../model/User.model";
 import dbConnect from "../../../../database/index";
 
