@@ -23,7 +23,7 @@ const btnAdd = {
 
 const AddUserForm = () => {
 	const [open, setOpen] = React.useState(false);
-	const [users, setUsers] = React.useState("");
+	const [username, setUsername] = React.useState("");
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -32,21 +32,11 @@ const AddUserForm = () => {
 	const handleClose = () => {
 		setOpen(false);
 	};
-	React.useEffect(() => {
-		const items = async () => {
-			const result = await axios.get("/api/users", { params: { userId: userId } });
-			setUsers(result.user);
-		};
-	});
-	const handleAddUser = async () => {
-		await axios.post("/api/users", { userId: userId });
-		const result = await axios.get("/api/users", { params: { userId: userId } });
-		setNotes(result.data);
 
-		if (users) {
-			console.log("for post: ", users);
-			axios.put("/api/users", { users: users, userId: userId, noteId: user._id });
-		}
+	const handleAddUser = async () => {
+		console.log("User: " + username);
+		await axios.post("/api/users", { username: username }); //1,Parameter aus der DB 2.Parameter aus useState
+		setOpen(false);
 	};
 
 	return (
@@ -66,6 +56,7 @@ const AddUserForm = () => {
 						type="name"
 						fullWidth
 						variant="standard"
+						onChange={e => setUsername(e.target.value)}
 					/>
 				</DialogContent>
 				<DialogActions>
