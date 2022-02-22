@@ -6,7 +6,7 @@ const famHubGreen = "#00798C";
 const famHubBlue = "#30638E";
 const famHubRed = "#D1495B";
 const famHubYellow = "#EDAE49";
-const famHubGrey = "#DCE1DE";
+const famHubGrey = "#e0e8e3";
 /*Typography*/
 const typoFontWeight300 = "300";
 const typoFontWeight600 = "600";

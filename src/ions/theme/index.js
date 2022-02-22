@@ -11,6 +11,10 @@ const theme = createTheme({
 		secondary: {
 			main: "#D1495B",
 		},
+		background: {
+			main: "#5B764A",
+			contrastText: "#fff",
+		},
 	},
 	/*	palette: {
 		mode: "light",

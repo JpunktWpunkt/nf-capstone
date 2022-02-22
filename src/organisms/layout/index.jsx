@@ -41,29 +41,41 @@ const Layout = ({ children }) => {
 			<HeaderLogin marginLeft="2em" />
 			<Box marginTop="8em" marginBottom="3em">
 				<Typography display="flex" marginLeft="2em" color="secondary">
-					You' re not signed in <br />
+					You' re not signed in
+					<br />
 				</Typography>
 			</Box>
 			<Box display="flex" justifyContent="center" flexWrap="wrap" marginBottom="10em">
+				{/*//TODO margin um das Bild herum*/}
 				<Image src={logo} alt="logo" />
-
+				{/*//TODO ab hier soll der Text Mobil nicht mehr links am Rand kleben*/}
 				<Stack spacing={2}>
-					<Typography color="primary">
+					<Typography paddingLeft="1em" color="primary">
 						<b>Welcome to my</b>
 					</Typography>
-					<Typography variant="h2">Capstone Project</Typography>
-					<Typography width="80vw" color="primary">
+					{/*//TODO Font Dauerhaft installieren alternativ Google handwritten Font*/}
+					<Typography paddingLeft="0.2em" variant="h2">
+						Capstone Project
+					</Typography>
+					<Typography
+						paddingLeft="1em"
+						display="flex"
+						justifyContent="center"
+						alignItems="center"
+						color="primary"
+					>
 						The FamilyHub facilitates the organizational daily life of the peer group.
 						With any number of registered users in a peer group, the app is particularly
-						concerned with getting an overview of one's notes as easily as possible
-						without getting bogged down in one's message groups. Each user has his own
-						notes, which it can view, delete, edit and create from anywhere. Other
-						planned features include a timestamp, a reminder function or the connection
-						to calendar systems and the creation of multiple peer groups. The shared
-						shopping list allows all users in the group to quickly and easily add items
-						they need to the list.
+						concerned with getting an overview of one's notes. Actually each User has
+						his own notes, which it can view, delete, edit and create from anywhere, but
+						also can read, update, delete or added another notes from his peer group.
+						Other planned features are to implement a Role System to define different
+						roles, to create different PeerGroups. Another Features are p.e. a
+						timestamp, a reminder function or the connection to calendar systems and the
+						creation of multiple peer groups. At last a shopping List will be allows all
+						users of a peergroup to define items to a Shopping-List.
 					</Typography>
-					<Typography width="80vw" color="secondary">
+					<Typography paddingLeft="1em" width="80vw" color="secondary">
 						<b>Tech Stack:</b> JavaScript | React.js | Next.js | NextAuth | MongoDB |
 						Axios | Mongoose | Material UI | CSS
 					</Typography>
@@ -72,7 +84,7 @@ const Layout = ({ children }) => {
 			<Button
 				sx={{ ...btnLogin }}
 				position="fixed"
-				variant="outlined"
+				variant="contained"
 				onClick={() => signIn()}
 			>
 				Sign in
