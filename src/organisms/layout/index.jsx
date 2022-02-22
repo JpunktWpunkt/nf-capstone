@@ -10,6 +10,19 @@ import Image from "next/image";
 import logo from "../../images/logo_familyhub.png";
 import Stack from "@mui/material/Stack";
 
+const btnLogin = {
+	borderRadius: "6px 6px 0 0",
+	display: "flex",
+	position: "fixed",
+	width: "100vw",
+	zIndex: 1,
+	left: 0,
+	fontSize: "1.5rem",
+	bottom: "4.5rem",
+	background: "#5B764A",
+	padding: "0.5rem 1rem",
+};
+
 const Layout = ({ children }) => {
 	const { data: session } = useSession();
 	if (session) {
@@ -27,11 +40,11 @@ const Layout = ({ children }) => {
 		<>
 			<HeaderLogin marginLeft="2em" />
 			<Box marginTop="8em" marginBottom="3em">
-				<Typography>
-					Not signed in <br />
+				<Typography display="flex" marginLeft="2em" color="secondary">
+					You' re not signed in <br />
 				</Typography>
 			</Box>
-			<Box display="flex" justifyContent="center" flexWrap="wrap">
+			<Box display="flex" justifyContent="center" flexWrap="wrap" marginBottom="10em">
 				<Image src={logo} alt="logo" />
 
 				<Stack spacing={2}>
@@ -54,16 +67,17 @@ const Layout = ({ children }) => {
 						<b>Tech Stack:</b> JavaScript | React.js | Next.js | NextAuth | MongoDB |
 						Axios | Mongoose | Material UI | CSS
 					</Typography>
-					<Button
-						position="absolute"
-						color="inherit"
-						variant="outlined"
-						onClick={() => signIn()}
-					>
-						Sign in
-					</Button>
 				</Stack>
 			</Box>
+			<Button
+				sx={{ ...btnLogin }}
+				position="fixed"
+				variant="outlined"
+				onClick={() => signIn()}
+			>
+				Sign in
+			</Button>
+			<Footer />
 		</>
 	);
 };
