@@ -6,6 +6,9 @@ import Footer from "../footer";
 import Header from "../header";
 import { useSession, signIn } from "next-auth/react";
 import HeaderLogin from "../login/header";
+import Image from "next/image";
+import logo from "../../images/logo_familyhub.png";
+import Stack from "@mui/material/Stack";
 
 const Layout = ({ children }) => {
 	const { data: session } = useSession();
@@ -22,19 +25,44 @@ const Layout = ({ children }) => {
 	}
 	return (
 		<>
-			<HeaderLogin />
-			<Box marginLeft="20em" marginBottom="3em">
+			<HeaderLogin marginLeft="2em" />
+			<Box marginTop="8em" marginBottom="3em">
 				<Typography>
 					Not signed in <br />
 				</Typography>
-				<Button
-					position="absolute"
-					color="inherit"
-					variant="outlined"
-					onClick={() => signIn()}
-				>
-					Sign in
-				</Button>
+			</Box>
+			<Box display="flex" justifyContent="center" flexWrap="wrap">
+				<Image src={logo} alt="logo" />
+
+				<Stack spacing={2}>
+					<Typography color="primary">
+						<b>Welcome to my</b>
+					</Typography>
+					<Typography variant="h2">Capstone Project</Typography>
+					<Typography width="80vw" color="primary">
+						The FamilyHub facilitates the organizational daily life of the peer group.
+						With any number of registered users in a peer group, the app is particularly
+						concerned with getting an overview of one's notes as easily as possible
+						without getting bogged down in one's message groups. Each user has his own
+						notes, which it can view, delete, edit and create from anywhere. Other
+						planned features include a timestamp, a reminder function or the connection
+						to calendar systems and the creation of multiple peer groups. The shared
+						shopping list allows all users in the group to quickly and easily add items
+						they need to the list.
+					</Typography>
+					<Typography width="80vw" color="secondary">
+						<b>Tech Stack:</b> JavaScript | React.js | Next.js | NextAuth | MongoDB |
+						Axios | Mongoose | Material UI | CSS
+					</Typography>
+					<Button
+						position="absolute"
+						color="inherit"
+						variant="outlined"
+						onClick={() => signIn()}
+					>
+						Sign in
+					</Button>
+				</Stack>
 			</Box>
 		</>
 	);
