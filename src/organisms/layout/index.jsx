@@ -23,11 +23,16 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<HeaderLogin />
-			<Box marginLeft="20em">
+			<Box marginLeft="20em" marginBottom="3em">
 				<Typography>
 					Not signed in <br />
 				</Typography>
-				<Button color="inherit" variant="outlined" onClick={() => signIn()}>
+				<Button
+					position="absolute"
+					color="inherit"
+					variant="outlined"
+					onClick={() => signIn()}
+				>
 					Sign in
 				</Button>
 			</Box>

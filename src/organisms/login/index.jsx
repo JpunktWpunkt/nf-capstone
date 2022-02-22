@@ -6,7 +6,7 @@ const Login = ({ children }) => {
 	return (
 		<>
 			<Header />
-			<Box marginTop="8em" marginBottom="8em">
+			<Box marginTop="6em" marginBottom="6em">
 				{children}
 			</Box>
 		</>

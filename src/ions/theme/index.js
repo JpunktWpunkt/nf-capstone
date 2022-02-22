@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material/styles";
+
 //TODO hier noch anpassen
 const theme = createTheme({
 	palette: {
@@ -23,7 +24,7 @@ const theme = createTheme({
 	},*/
 	typography: {
 		h2: {
-			fontFamily: "Roboto",
+			fontFamily: "Adobe Handwriting",
 		},
 		h6: {
 			fontFamily: "serif",
