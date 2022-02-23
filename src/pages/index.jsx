@@ -9,7 +9,6 @@ import Image from "next/image";
 import logo from "../images/logo_familyhub.png";
 import AddUserForm from "../molecules/addUserForm";
 
-//TODO BTN und CRD Gap funktioniert nicht, evtl. Cards falsch umrandet, nochmal checken
 const btn = {
 	display: "flex",
 	width: "80vw",

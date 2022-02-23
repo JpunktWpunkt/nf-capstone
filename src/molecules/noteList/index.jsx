@@ -50,7 +50,7 @@ const NoteList = ({ userId }) => {
 
 	return (
 		<Container>
-			<Typography variant="14">
+			<Typography color="primary">
 				welcome to your Noteboard !You can read, write update or delete your pins.
 			</Typography>
 			<Grid strategy="grid" colCount={{ s: 1, m: 2, l: 3, xl: 4 }}>

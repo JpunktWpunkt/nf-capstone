@@ -18,7 +18,7 @@ const Footer = () => {
 	return (
 		<AppBar sx={{ ...abs }}>
 			<Container>
-				<Toolbar display="flex" justifyContent="space-between">
+				<Toolbar>
 					<Link passHref href="/">
 						<CottageOutlinedIcon
 							display="flex"
@@ -30,7 +30,7 @@ const Footer = () => {
 						</CottageOutlinedIcon>
 					</Link>
 
-					<Typography marginLeft="15rem" fontSize="0.8rem">
+					<Typography marginLeft="12rem" fontSize="0.8rem">
 						©2022 JpunktWpunkt
 					</Typography>
 				</Toolbar>

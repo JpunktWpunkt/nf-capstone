@@ -5,6 +5,7 @@ import Button from "@mui/material/Button";
 import axios from "axios";
 import SaveIcon from "@material-ui/icons/Save";
 import DeleteForeverIcon from "@material-ui/icons/DeleteForever";
+/*import theme from "../../ions/theme/custom.js";*/
 
 const field = {
 	display: "flex",
@@ -29,10 +30,9 @@ const btnDelete = {
 
 const btnSave = {
 	borderRadius: "0 0 6px 6px",
-	/*	width: "100vw",
-	fontSize: "1rem",
+	pointerEvents: "auto",
+	color: "#fff",
 	background: "primary",
-	padding: "0.5rem 1rem",*/
 };
 
 const NoteItem = ({ userId, note, setNotes }) => {

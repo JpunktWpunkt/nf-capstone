@@ -18,7 +18,7 @@ const abs = {
 const Header = () => {
 	return (
 		<Box sx={{ flexGrow: 1 }}>
-			<AppBar sx={{ ...abs }} position="static">
+			<AppBar sx={{ ...abs }} position="fixed">
 				<Toolbar>
 					<Typography component="div" sx={{ flexGrow: 1 }}>
 						<Image
@@ -28,7 +28,7 @@ const Header = () => {
 							height="80vw"
 							justifyContent="left"
 						/>
-						<Image src={logo2} alt="logo" justifyContent="left" />
+						<Image src={logo2} alt="Logo 3d FamilyHub" justifyContent="left" />
 					</Typography>
 				</Toolbar>
 			</AppBar>

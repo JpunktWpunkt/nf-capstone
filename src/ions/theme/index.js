@@ -1,29 +1,31 @@
 import { createTheme } from "@mui/material/styles";
+
+const famHubGreen = "#00798C";
+const famHubRed = "#D1495B";
 //TODO hier noch anpassen
 const theme = createTheme({
 	palette: {
 		mode: "light",
 		primary: {
-			main: "#00798C",
+			main: `${famHubGreen}`,
 			contrastText: "#fff",
 		},
 		secondary: {
-			main: "#D1495B",
+			main: `${famHubRed}`,
+			contrastText: "#fff",
+		},
+		background: {
+			main: "#5B764A",
+			contrastText: "#fff",
 		},
 	},
-	/*	palette: {
-		mode: "light",
-		primary: {
-			main: "#00798C",
-			contrastText: "#fff",
-		},
-		secondary: {
-			main: "#D1495B",
-		},
-	},*/
 	typography: {
 		h2: {
-			fontFamily: "Roboto",
+			fontFamily: ["Adobe Handwriting", "Homemade Apple", "cursive", "serif"].join(","),
+		},
+
+		h4: {
+			fontFamily: ["Adobe Handwriting", "Homemade Apple", "cursive", "serif"].join(","),
 		},
 		h6: {
 			fontFamily: "serif",
@@ -47,54 +49,15 @@ const theme = createTheme({
 				},
 			},
 		},
-		Container: {
-			styleOverride: {
-				root: {
-					backgroundColor: "#FFFF00",
-					color: "#30638E",
-				},
-			},
-		},
+	},
 
-		TextField: {
-			styleOverride: {
-				root: {
-					backgroundColor: "#FFFF00",
-					color: "#30638E",
-				},
-			},
-		},
-
-		MuiCardMedia: {
-			styleOverride: {
-				root: {
-					borderRadius: 20,
-				},
-			},
-		},
-
-		MuiCardHeader: {
-			styleOverride: {
-				subheader: {
-					backgroundColor: "#0000FF",
-					color: "#FFFF00",
-				},
-				title: {
-					backgroundColor: "#0000FF",
-					color: "#FFFF00",
-				},
-			},
-		},
-		MuiIconButton: {
-			styleOverride: {
-				root: {
-					borderRadius: 0,
-					backgroundColor: "#FF0000",
-					color: "#30638E",
-					"&:hover": {
-						backgroundColor: "#00FF00",
-						color: "#30638E",
-					},
+	MuiIconButton: {
+		styleOverride: {
+			root: {
+				borderRadius: 0,
+				color: "#30638E",
+				"&:hover": {
+					color: "red",
 				},
 			},
 		},
