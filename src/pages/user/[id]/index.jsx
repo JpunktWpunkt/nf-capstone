@@ -1,3 +1,4 @@
+import Typography from "@mui/material/Typography";
 import { useRouter } from "next/router";
 import React from "react";
 import NoteList from "../../../molecules/noteList";
@@ -8,7 +9,9 @@ const Page = () => {
 
 	return (
 		<Layout>
-			<h3>Hi {query.name},</h3>
+			<Typography marginLeft="0.5em" marginTop="0.5em" color="primary">
+				Hi {query.name},
+			</Typography>
 			<NoteList userId={query.id} />
 		</Layout>
 	);

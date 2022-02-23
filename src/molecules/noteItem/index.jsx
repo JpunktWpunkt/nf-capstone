@@ -31,12 +31,8 @@ const btnDelete = {
 const btnSave = {
 	borderRadius: "0 0 6px 6px",
 	pointerEvents: "auto",
-	Color: "#fff",
+	color: "#fff",
 	background: "primary",
-	/*	width: "100vw",
-	fontSize: "1rem",
-
-	padding: "0.5rem 1rem",*/
 };
 
 const NoteItem = ({ userId, note, setNotes }) => {

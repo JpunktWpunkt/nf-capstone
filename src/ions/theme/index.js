@@ -30,6 +30,10 @@ const theme = createTheme({
 		h2: {
 			fontFamily: "Adobe Handwriting",
 		},
+
+		h4: {
+			fontFamily: "Adobe Handwriting",
+		},
 		h6: {
 			fontFamily: "serif",
 			fontSize: "14px",

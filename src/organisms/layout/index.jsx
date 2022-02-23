@@ -1,3 +1,4 @@
+import { Container } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -9,17 +10,33 @@ import HeaderLogin from "../login/header";
 import Image from "next/image";
 import logo from "../../images/logo_familyhub.png";
 import Stack from "@mui/material/Stack";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import GoogleIcon from "@mui/icons-material/Google";
 
-const btnLogin = {
+const btnLoginGithub = {
 	borderRadius: "6px 6px 0 0",
 	display: "flex",
-	position: "fixed",
-	width: "100vw",
-	zIndex: 1,
-	left: 0,
+	width: "100%",
+	justifyContent: "column",
+	/*	position: "fixed",*/
 	fontSize: "1.5rem",
 	bottom: "4.5rem",
 	background: "#5B764A",
+	marginBottom: "0.2rem",
+	/*border: "solid 1px",*/
+	padding: "0.5rem 1rem",
+};
+
+const btnLoginGoogle = {
+	borderRadius: "0 0 0 0",
+	display: "flex",
+	width: "100%",
+	justifyContent: "column",
+	/*	position: "fixed",*/
+	fontSize: "1.5rem",
+	bottom: "4.5rem",
+	background: "#5B764A",
+	/*border: "solid 1px",*/
 	padding: "0.5rem 1rem",
 };
 
@@ -39,16 +56,14 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<HeaderLogin marginLeft="2em" />
-			<Box marginTop="8em" marginBottom="3em">
+			<Box marginTop="8em" marginBottom="1em">
 				<Typography display="flex" marginLeft="2em" color="secondary">
 					You' re not signed in
 					<br />
 				</Typography>
 			</Box>
 			<Box display="flex" justifyContent="center" flexWrap="wrap" marginBottom="10em">
-				{/*//TODO margin um das Bild herum*/}
 				<Image src={logo} alt="logo" />
-				{/*//TODO ab hier soll der Text Mobil nicht mehr links am Rand kleben*/}
 				<Stack spacing={2}>
 					<Typography paddingLeft="1em" color="primary">
 						<b>Welcome to my</b>
@@ -64,31 +79,51 @@ const Layout = ({ children }) => {
 						alignItems="center"
 						color="primary"
 					>
-						The FamilyHub facilitates the organizational daily life of the peer group.
-						With any number of registered users in a peer group, the app is particularly
-						concerned with getting an overview of one's notes. Actually each User has
-						his own notes, which it can view, delete, edit and create from anywhere, but
-						also can read, update, delete or added another notes from his peer group.
-						Other planned features are to implement a Role System to define different
-						roles, to create different PeerGroups. Another Features are p.e. a
-						timestamp, a reminder function or the connection to calendar systems and the
-						creation of multiple peer groups. At last a shopping List will be allows all
-						users of a peergroup to define items to a Shopping-List.
+						The FamilyHub facilitates the daily life of your peer group. With any number
+						of registered users in a peer group, the app is particularly concerned with
+						getting an overview of one's notes. Actually, each User has his own notes,
+						which it can view, delete, edit and create from anywhere, but also can read,
+						update, delete or added another notes from his peer group. Other planned
+						features are to implement a Role System to define different roles, to create
+						different Peer groups. Another Features are p.e. a timestamp, a reminder
+						function or the connection to calendar systems and the creation of multiple
+						peer groups. At last, a shopping List will be allowing all users of a Peer
+						group to define items to a Shopping-List.
 					</Typography>
+
 					<Typography paddingLeft="1em" width="80vw" color="secondary">
 						<b>Tech Stack:</b> JavaScript | React.js | Next.js | NextAuth | MongoDB |
 						Axios | Mongoose | Material UI | CSS
 					</Typography>
+					<Typography variant="h4" paddingLeft="1em" color="primary">
+						Let's go and sign in
+					</Typography>
 				</Stack>
 			</Box>
+
 			<Button
-				sx={{ ...btnLogin }}
-				position="fixed"
+				sx={{ ...btnLoginGithub }}
 				variant="contained"
-				onClick={() => signIn()}
+				startIcon={<GitHubIcon />}
+				onClick={() => {
+					signIn("github");
+				}}
 			>
-				Sign in
+				{" "}
+				Sign in with GitHub!
 			</Button>
+			<Button
+				sx={{ ...btnLoginGoogle }}
+				variant="contained"
+				startIcon={<GoogleIcon />}
+				onClick={() => {
+					signIn("google");
+				}}
+			>
+				{" "}
+				Sign in with Google!
+			</Button>
+
 			<Footer />
 		</>
 	);
