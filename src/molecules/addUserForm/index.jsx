@@ -45,7 +45,6 @@ const AddUserForm = () => {
 				+ Add New User
 			</Button>
 			<Dialog open={open} onClose={handleClose}>
-				<DialogTitle>New User</DialogTitle>
 				<DialogContent>
 					<DialogContentText>Add a new pinboard user</DialogContentText>
 					<TextField
