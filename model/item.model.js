@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const Schema = new mongoose.Schema({
-	title: String,
+	name: String,
 	details: String,
 	checked: Boolean,
 	id: Number,
