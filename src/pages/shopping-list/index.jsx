@@ -10,6 +10,12 @@ import Typography from "@mui/material/Typography";
 import { Grid } from "@contour/react";
 import ItemButtons from "../../molecules/itemButtons";
 
+const handleDelete = async () => {
+	await axios.delete("/api/items", { name: item }); //1,Parameter aus der DB 2.Parameter aus useState
+	const result = await axios.get("/api/items", { params: { name: item } });
+	window.location.reload();
+};
+
 const Page = () => {
 	return (
 		<Layout>
@@ -33,7 +39,7 @@ const Page = () => {
 							justifyContent="center"
 							sx={{ rowGap: 1 }}
 						>
-							<ItemButtons />
+							<ItemButtons onClick={handleDelete} />
 						</Box>
 					</Grid>
 				</Stack>
