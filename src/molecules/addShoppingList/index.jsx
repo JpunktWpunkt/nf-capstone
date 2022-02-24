@@ -6,7 +6,6 @@ import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
 
 const btnAdd = {
 	borderRadius: "6px 6px 0 0",
@@ -15,7 +14,7 @@ const btnAdd = {
 	width: "100vw",
 	zIndex: 1,
 	left: 0,
-	fontSize: "1.5rem",
+	fontSize: "1.2rem",
 	bottom: "4.5rem",
 	background: "#5B764A",
 	padding: "0.5rem 1rem",
@@ -23,7 +22,7 @@ const btnAdd = {
 
 const AddShoppingList = () => {
 	const [open, setOpen] = React.useState(false);
-	const [username, setUsername] = React.useState("");
+	const [item, setItem] = React.useState(null);
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -34,7 +33,7 @@ const AddShoppingList = () => {
 	};
 
 	const handleAddUser = async () => {
-		await axios.post("/api/users", { username: username }); //1,Parameter aus der DB 2.Parameter aus useState
+		await axios.post("/api/items", { name: item }); //1,Parameter aus der DB 2.Parameter aus useState
 		setOpen(false);
 		window.location.reload();
 	};
@@ -55,12 +54,12 @@ const AddShoppingList = () => {
 						type="name"
 						fullWidth
 						variant="standard"
-						onChange={e => setUsername(e.target.value)}
+						onChange={e => setItem(e.target.value)}
 					/>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose}>Cancel</Button>
-					<Button onClick={handleAddUser}>Enter User</Button>
+					<Button onClick={handleAddUser}>Enter Item</Button>
 				</DialogActions>
 			</Dialog>
 		</div>

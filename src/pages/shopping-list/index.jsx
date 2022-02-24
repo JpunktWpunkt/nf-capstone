@@ -1,21 +1,14 @@
+import { ButtonGroup } from "@mui/material";
 import Stack from "@mui/material/Stack";
+import axios from "axios";
 import Head from "next/head";
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../../organisms/layout";
 import AddShoppingList from "../../molecules/addShoppingList";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@contour/react";
-
-const btn = {
-	display: "flex",
-	width: "100px",
-	height: "100px",
-	left: 0,
-	fontSize: 14,
-	margin: "5px",
-};
+import ItemButtons from "../../molecules/itemButtons";
 
 const Page = () => {
 	return (
@@ -34,40 +27,18 @@ const Page = () => {
 						justifyContent="space-around"
 						rowCount={{ s: 1, m: 2, l: 3, xl: 4 }}
 					>
-						<Button sx={{ ...btn }} variant="outlined">
-							Banana
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Apple
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Milk
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Beer
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Chocolate
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Flowers
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Flowers
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Flowers
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Flowers
-						</Button>
-						<Button sx={{ ...btn }} variant="outlined">
-							Flowers
-						</Button>
+						<Box
+							display="grid"
+							flexWrap="wrap"
+							justifyContent="center"
+							sx={{ rowGap: 1 }}
+						>
+							<ItemButtons />
+						</Box>
 					</Grid>
 				</Stack>
 			</Box>
-			<AddShoppingList zIndex="1" />
+			<AddShoppingList />
 		</Layout>
 	);
 };

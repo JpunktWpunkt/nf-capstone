@@ -9,7 +9,7 @@ const Page = () => {
 
 	return (
 		<Layout>
-			<Typography marginLeft="0.5em" marginTop="0.5em" color="primary">
+			<Typography marginLeft="0.5em" color="primary">
 				Hi {query.name},
 			</Typography>
 			<NoteList userId={query.id} />

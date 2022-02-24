@@ -1,4 +1,4 @@
-import Note from "../../../../model/note.model";
+import Item from "../../../../model/item.model";
 import dbConnect from "../../../../database/index";
 
 const handler = async (request, response) => {
@@ -9,7 +9,7 @@ const handler = async (request, response) => {
 	switch (method) {
 		case "GET":
 			try {
-				const mongoResponse = await Note.find({ userId: request.query.userId });
+				const mongoResponse = await Item.find();
 				response.status(200).json(mongoResponse);
 			} catch (err) {
 				console.log(err);
@@ -20,22 +20,7 @@ const handler = async (request, response) => {
 		case "POST":
 			try {
 				console.log("try body request", request.body);
-				const mongoResponse = await Note.create(request.body);
-				console.log("mongoDB response", mongoResponse);
-				response.status(200).json(mongoResponse);
-			} catch (err) {
-				console.log(err);
-				response.status(403).send("ups, something went wrong");
-			}
-			break;
-
-		//update content of specific note
-		case "PUT":
-			try {
-				console.log("try body request", request.body);
-				const mongoResponse = await Note.findByIdAndUpdate(request.body.noteId, {
-					content: request.body.content,
-				});
+				const mongoResponse = await Item.create(request.body);
 				console.log("mongoDB response", mongoResponse);
 				response.status(200).json(mongoResponse);
 			} catch (err) {
@@ -47,9 +32,9 @@ const handler = async (request, response) => {
 		case "DELETE":
 			try {
 				console.log("try delete: delete is called");
-				console.log("try to get info about request bodynote: ", request.query.noteId);
-				const mongoResponse = await Note.findByIdAndDelete({
-					_id: request.query.noteId,
+				console.log("try to get info about request bodynote: ", request.query.itemId);
+				const mongoResponse = await Item.findByIdAndDelete({
+					_id: request.query.itemId,
 				});
 				console.log("mongoDB response", mongoResponse);
 				response.status(200).json(mongoResponse);

@@ -15,7 +15,7 @@ const btnAdd = {
 	width: "100vw",
 	zIndex: 1,
 	left: 0,
-	fontSize: "1.5rem",
+	fontSize: "1.2rem",
 	bottom: "4.5rem",
 	background: "#5B764A",
 	padding: "0.5rem 1rem",
