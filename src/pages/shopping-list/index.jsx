@@ -9,7 +9,6 @@ import AddShoppingList from "../../molecules/addShoppingList";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { Grid } from "@contour/react";
-import ItemButtons from "../../molecules/itemButtons";
 
 const btn = {
 	display: "flex",
