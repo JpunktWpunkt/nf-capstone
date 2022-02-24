@@ -41,7 +41,7 @@ const Layout = ({ children }) => {
 		return (
 			<>
 				<Header marginBottom="2em" />
-				<Box marginTop="10em" marginBottom="8em">
+				<Box marginTop="8em" marginBottom="8em">
 					{children}
 				</Box>
 				<Footer />
@@ -57,13 +57,20 @@ const Layout = ({ children }) => {
 					<br />
 				</Typography>
 			</Box>
-			<Box display="flex" justifyContent="center" flexWrap="wrap" marginBottom="5em">
+			<Box
+				display="flex"
+				justifyContent="center"
+				flexWrap="wrap"
+				marginLeft="0.8em"
+				marginRight="0.8em"
+				marginBottom="5em"
+			>
 				<Image src={logo} alt="logo" />
 				<Stack spacing={2}>
 					<Typography paddingLeft="1em" color="primary">
 						<b>Welcome to my</b>
 					</Typography>
-					<Typography paddingLeft="0.1em" variant="h3">
+					<Typography paddingLeft="0.1em" variant="h3" sx={{ fontSize: "2.5rem" }}>
 						Capstone Project
 					</Typography>
 					<Typography
@@ -89,7 +96,7 @@ const Layout = ({ children }) => {
 						<b>Tech Stack:</b> JavaScript | React.js | Next.js | NextAuth | MongoDB |
 						Axios | Mongoose | Material UI | CSS
 					</Typography>
-					<Typography variant="h4" paddingLeft="1em" color="primary">
+					<Typography variant="h4" paddingLeft="0.5em" color="primary">
 						Let's go and sign in
 					</Typography>
 				</Stack>

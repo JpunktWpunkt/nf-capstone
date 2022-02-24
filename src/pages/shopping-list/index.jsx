@@ -48,7 +48,7 @@ const Page = () => {
 			</Head>
 			<Box marginLeft="0.5em">
 				<Stack spacing={2}>
-					<Typography paddingLeft="0.2em" marginTop="1.5em" variant="h4">
+					<Typography paddingLeft="0.2em" variant="h4">
 						Shopping- List
 					</Typography>
 					<Grid strategy="grid" colCount={{ s: 3, m: 3, l: 4, xl: 4 }}>
