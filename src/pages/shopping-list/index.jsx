@@ -16,7 +16,7 @@ const btn = {
 	height: "100px",
 	left: 0,
 	fontSize: "0.9rem",
-	margin: "5px",
+	margin: "10px",
 };
 
 const Page = () => {
@@ -54,22 +54,20 @@ const Page = () => {
 					</Typography>
 					<Grid strategy="flex" rowCount={{ s: 1, m: 2, l: 3, xl: 4 }}>
 						<Box display="grid" flexWrap="wrap" sx={{ rowGap: 1 }}>
-							<div>
+							<ButtonGroup>
 								{items.map(item => {
 									return (
-										<ButtonGroup>
-											<Button
-												key={item._id}
-												sx={{ ...btn }}
-												variant="outlined"
-												onClick={() => handleDelete(item._id)}
-											>
-												{item.name}
-											</Button>
-										</ButtonGroup>
+										<Button
+											key={item._id}
+											sx={{ ...btn }}
+											variant="outlined"
+											onClick={() => handleDelete(item._id)}
+										>
+											{item.name}
+										</Button>
 									);
 								})}
-							</div>
+							</ButtonGroup>
 						</Box>
 					</Grid>
 				</Stack>
