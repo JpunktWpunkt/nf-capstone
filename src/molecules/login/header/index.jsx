@@ -1,4 +1,5 @@
-import * as React from "react";
+//this file can be deleted
+/*import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -18,4 +19,4 @@ const HeaderLogin = () => {
 	);
 };
 
-export default HeaderLogin;
+export default HeaderLogin;*/

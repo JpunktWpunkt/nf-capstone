@@ -1,4 +1,3 @@
-import { Container } from "@mui/material";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
@@ -18,12 +17,10 @@ const btnLoginGithub = {
 	display: "flex",
 	width: "100%",
 	justifyContent: "column",
-	/*	position: "fixed",*/
-	fontSize: "1.5rem",
+	fontSize: "1.2rem",
 	bottom: "4.5rem",
 	background: "#5B764A",
-	marginBottom: "0.2rem",
-	/*border: "solid 1px",*/
+	marginBottom: "0.1rem",
 	padding: "0.5rem 1rem",
 };
 
@@ -32,11 +29,9 @@ const btnLoginGoogle = {
 	display: "flex",
 	width: "100%",
 	justifyContent: "column",
-	/*	position: "fixed",*/
-	fontSize: "1.5rem",
+	fontSize: "1.2rem",
 	bottom: "4.5rem",
 	background: "#5B764A",
-	/*border: "solid 1px",*/
 	padding: "0.5rem 1rem",
 };
 
@@ -55,20 +50,20 @@ const Layout = ({ children }) => {
 	}
 	return (
 		<>
-			<HeaderLogin marginLeft="2em" />
-			<Box marginTop="8em" marginBottom="1em">
+			<HeaderLogin marginLeft="1em" />
+			<Box marginTop="7em">
 				<Typography display="flex" marginLeft="2em" color="secondary">
 					You' re not signed in
 					<br />
 				</Typography>
 			</Box>
-			<Box display="flex" justifyContent="center" flexWrap="wrap" marginBottom="10em">
+			<Box display="flex" justifyContent="center" flexWrap="wrap" marginBottom="5em">
 				<Image src={logo} alt="logo" />
 				<Stack spacing={2}>
 					<Typography paddingLeft="1em" color="primary">
 						<b>Welcome to my</b>
 					</Typography>
-					<Typography paddingLeft="0.2em" variant="h2">
+					<Typography paddingLeft="0.1em" variant="h3">
 						Capstone Project
 					</Typography>
 					<Typography

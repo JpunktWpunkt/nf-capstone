@@ -28,6 +28,10 @@ const theme = createTheme({
 			fontFamily: ["Adobe Handwriting", "Homemade Apple", "cursive", "serif"].join(","),
 		},
 
+		h3: {
+			fontFamily: ["Adobe Handwriting", "Homemade Apple", "cursive", "serif"].join(","),
+		},
+
 		h4: {
 			fontFamily: ["Adobe Handwriting", "Homemade Apple", "cursive", "serif"].join(","),
 		},
@@ -40,6 +44,14 @@ const theme = createTheme({
 		},
 	},
 	components: {
+		MuiToolbar: {
+			styleOverrides: {
+				root: {
+					justifyContent: "space-between",
+				},
+			},
+		},
+
 		MuiButton: {
 			defaultProps: {
 				variant: "contained",

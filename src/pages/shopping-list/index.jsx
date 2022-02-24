@@ -1,4 +1,3 @@
-import { ButtonGroup } from "@mui/material";
 import Button from "@mui/material/Button";
 import Stack from "@mui/material/Stack";
 import axios from "axios";
@@ -16,7 +15,7 @@ const btn = {
 	height: "100px",
 	left: 0,
 	fontSize: "0.9rem",
-	margin: "10px",
+	margin: "1px",
 };
 
 const Page = () => {
@@ -47,28 +46,24 @@ const Page = () => {
 				<title key="title">Shopping-List</title>
 				<meta key="description" name="description" content="Shopping-List" />
 			</Head>
-			<Box marginLeft="1em">
+			<Box marginLeft="0.5em">
 				<Stack spacing={2}>
 					<Typography paddingLeft="0.2em" marginTop="1.5em" variant="h4">
 						Shopping- List
 					</Typography>
-					<Grid strategy="flex" rowCount={{ s: 1, m: 2, l: 3, xl: 4 }}>
-						<Box display="grid" flexWrap="wrap" sx={{ rowGap: 1 }}>
-							<ButtonGroup>
-								{items.map(item => {
-									return (
-										<Button
-											key={item._id}
-											sx={{ ...btn }}
-											variant="outlined"
-											onClick={() => handleDelete(item._id)}
-										>
-											{item.name}
-										</Button>
-									);
-								})}
-							</ButtonGroup>
-						</Box>
+					<Grid strategy="grid" colCount={{ s: 3, m: 3, l: 4, xl: 4 }}>
+						{items.map(item => {
+							return (
+								<Button
+									key={item._id}
+									sx={{ ...btn }}
+									variant="outlined"
+									onClick={() => handleDelete(item._id)}
+								>
+									{item.name}
+								</Button>
+							);
+						})}
 					</Grid>
 				</Stack>
 			</Box>
