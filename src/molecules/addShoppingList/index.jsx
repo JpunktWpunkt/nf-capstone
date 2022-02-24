@@ -19,8 +19,8 @@ const btnAdd = {
 	background: "#5B764A",
 	padding: "0.5rem 1rem",
 };
-
-const AddShoppingList = () => {
+//parameter kommt aus der page shopping-list/index und wird dort an doe AddShoppingList Componente über das setItems übergeben damnit es im handleAddItem weitere verwendet werden kann
+const AddShoppingList = ({ shoppingListState }) => {
 	const [open, setOpen] = React.useState(false);
 	const [item, setItem] = React.useState(null);
 
@@ -32,10 +32,11 @@ const AddShoppingList = () => {
 		setOpen(false);
 	};
 
-	const handleAddUser = async () => {
+	const handleAddItem = async () => {
 		await axios.post("/api/items", { name: item }); //1,Parameter aus der DB 2.Parameter aus useState
+		const result = await axios.get("/api/items");
+		shoppingListState(result.data);
 		setOpen(false);
-		window.location.reload();
 	};
 
 	return (
@@ -59,7 +60,7 @@ const AddShoppingList = () => {
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose}>Cancel</Button>
-					<Button onClick={handleAddUser}>Enter Item</Button>
+					<Button onClick={handleAddItem}>Enter Item</Button>
 				</DialogActions>
 			</Dialog>
 		</div>
