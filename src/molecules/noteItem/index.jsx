@@ -72,7 +72,6 @@ const NoteItem = ({ userId, note, setNotes }) => {
 					required
 					sx={{ ...field }}
 					variant="outlined"
-					color="secondary"
 					rows={6}
 					name="put"
 					error={contentError}

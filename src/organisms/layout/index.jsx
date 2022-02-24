@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
 		return (
 			<>
 				<Header marginBottom="2em" />
-				<Box marginTop="8em" marginBottom="8em">
+				<Box marginTop="10em" marginBottom="8em">
 					{children}
 				</Box>
 				<Footer />
@@ -68,7 +68,6 @@ const Layout = ({ children }) => {
 					<Typography paddingLeft="1em" color="primary">
 						<b>Welcome to my</b>
 					</Typography>
-					{/*//TODO Font Dauerhaft installieren alternativ Google handwritten Font*/}
 					<Typography paddingLeft="0.2em" variant="h2">
 						Capstone Project
 					</Typography>

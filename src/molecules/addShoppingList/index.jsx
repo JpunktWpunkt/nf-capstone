@@ -19,10 +19,10 @@ const btnAdd = {
 	background: "#5B764A",
 	padding: "0.5rem 1rem",
 };
-
-const AddUserForm = () => {
+//parameter kommt aus der page shopping-list/index und wird dort an doe AddShoppingList Componente über das setItems übergeben damnit es im handleAddItem weitere verwendet werden kann
+const AddShoppingList = ({ shoppingListState }) => {
 	const [open, setOpen] = React.useState(false);
-	const [username, setUsername] = React.useState("");
+	const [item, setItem] = React.useState(null);
 
 	const handleClickOpen = () => {
 		setOpen(true);
@@ -32,37 +32,38 @@ const AddUserForm = () => {
 		setOpen(false);
 	};
 
-	const handleAddUser = async () => {
-		await axios.post("/api/users", { username: username }); //1,Parameter aus der DB 2.Parameter aus useState
+	const handleAddItem = async () => {
+		await axios.post("/api/items", { name: item }); //1,Parameter aus der DB 2.Parameter aus useState
+		const result = await axios.get("/api/items");
+		shoppingListState(result.data);
 		setOpen(false);
-		window.location.reload();
 	};
 
 	return (
 		<div>
 			<Button variant="contained" sx={{ ...btnAdd }} onClick={handleClickOpen}>
-				+ Add New User
+				+ Add New Item
 			</Button>
 			<Dialog open={open} onClose={handleClose}>
 				<DialogContent>
-					<DialogContentText>Add a new pinboard user</DialogContentText>
+					<DialogContentText>Add a new Item to our Shopping-List </DialogContentText>
 					<TextField
 						autoFocus
+						fullWidth
 						margin="dense"
 						id="name"
 						label="Name"
 						type="name"
-						fullWidth
 						variant="standard"
-						onChange={e => setUsername(e.target.value)}
+						onChange={e => setItem(e.target.value)}
 					/>
 				</DialogContent>
 				<DialogActions>
 					<Button onClick={handleClose}>Cancel</Button>
-					<Button onClick={handleAddUser}>Enter User</Button>
+					<Button onClick={handleAddItem}>Enter Item</Button>
 				</DialogActions>
 			</Dialog>
 		</div>
 	);
 };
-export default AddUserForm;
+export default AddShoppingList;

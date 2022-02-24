@@ -1,10 +1,7 @@
 import mongoose from "mongoose";
 
-const Schema = new mongoose.Schema({
-	title: String,
-	details: String,
-	checked: Boolean,
-	id: Number,
+const itemSchema = new mongoose.Schema({
+	name: String,
 });
 
-export default mongoose.models.Todo || mongoose.model("Todo", Schema);
+export default mongoose.models.Item || mongoose.model("Item", itemSchema);

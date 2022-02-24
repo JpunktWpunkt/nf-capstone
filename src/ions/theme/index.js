@@ -2,6 +2,9 @@ import { createTheme } from "@mui/material/styles";
 
 const famHubGreen = "#00798C";
 const famHubRed = "#D1495B";
+const famHubGrey = "#e0e8e3";
+const famHubAddGreen = "#5B764A";
+
 //TODO hier noch anpassen
 const theme = createTheme({
 	palette: {
@@ -15,8 +18,9 @@ const theme = createTheme({
 			contrastText: "#fff",
 		},
 		background: {
-			main: "#5B764A",
+			main: `${famHubAddGreen}`,
 			contrastText: "#fff",
+			paper: `${famHubGrey}`,
 		},
 	},
 	typography: {

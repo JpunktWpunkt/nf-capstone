@@ -12,10 +12,8 @@ import AddUserForm from "../molecules/addUserForm";
 const btn = {
 	display: "flex",
 	width: "80vw",
-	rowGap: 10,
 	left: 0,
-	fontSize: 25,
-	margin: "100",
+	fontSize: "1rem",
 };
 
 // eslint-disable-next-line react/function-component-definition

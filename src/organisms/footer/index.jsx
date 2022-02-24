@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import Link from "next/link";
 import React from "react";
 import CottageOutlinedIcon from "@mui/icons-material/CottageOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 const abs = {
 	display: "flex",
@@ -20,17 +21,20 @@ const Footer = () => {
 			<Container>
 				<Toolbar>
 					<Link passHref href="/">
-						<CottageOutlinedIcon
-							display="flex"
-							justifyContent="flex-start"
-							variant="outlined"
-							fontSize="large"
-						>
+						<CottageOutlinedIcon display="flex" variant="outlined" fontSize="large">
 							Home
 						</CottageOutlinedIcon>
 					</Link>
-
-					<Typography marginLeft="12rem" fontSize="0.8rem">
+					<Link passHref href="/shopping-list">
+						<ShoppingCartOutlinedIcon
+							display="flex"
+							variant="outlined"
+							fontSize="large"
+						>
+							Shopping-List
+						</ShoppingCartOutlinedIcon>
+					</Link>
+					<Typography marginLeft="8rem" fontSize="0.8rem">
 						©2022 JpunktWpunkt
 					</Typography>
 				</Toolbar>

@@ -21,14 +21,8 @@ const Header = () => {
 			<AppBar sx={{ ...abs }} position="fixed">
 				<Toolbar>
 					<Typography component="div" sx={{ flexGrow: 1 }}>
-						<Image
-							src={logo}
-							alt="logo"
-							width="80vw"
-							height="80vw"
-							justifyContent="left"
-						/>
-						<Image src={logo2} alt="Logo 3d FamilyHub" justifyContent="left" />
+						<Image src={logo} alt="logo" width="80vw" height="80vw" />
+						<Image src={logo2} alt="Logo 3d FamilyHub" />
 					</Typography>
 				</Toolbar>
 			</AppBar>
