@@ -1,4 +1,5 @@
-import { Container } from "@mui/material";
+import Box from "@mui/material/Box";
+import Stack from "@mui/material/Stack";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
@@ -18,27 +19,25 @@ const abs = {
 const Footer = () => {
 	return (
 		<AppBar sx={{ ...abs }}>
-			<Container>
-				<Toolbar>
+			<Toolbar sx={{ alignItems: "center" }}>
+				<Stack direction="row" gap={5} sx={{ flexGrow: 1 }}>
 					<Link passHref href="/">
-						<CottageOutlinedIcon display="flex" variant="outlined" fontSize="large">
-							Home
-						</CottageOutlinedIcon>
+						<Box sx={{ color: "currentColor" }}>
+							<CottageOutlinedIcon
+								display="flex"
+								variant="outlined"
+								fontSize="large"
+							/>
+						</Box>
 					</Link>
 					<Link passHref href="/shopping-list">
-						<ShoppingCartOutlinedIcon
-							display="flex"
-							variant="outlined"
-							fontSize="large"
-						>
-							Shopping-List
-						</ShoppingCartOutlinedIcon>
+						<Box sx={{ color: "currentColor" }}>
+							<ShoppingCartOutlinedIcon fontSize="large" />
+						</Box>
 					</Link>
-					<Typography marginLeft="8rem" fontSize="0.8rem">
-						©2022 JpunktWpunkt
-					</Typography>
-				</Toolbar>
-			</Container>
+				</Stack>
+				<Typography variant="caption">©2022 JpunktWpunkt</Typography>
+			</Toolbar>
 		</AppBar>
 	);
 };
