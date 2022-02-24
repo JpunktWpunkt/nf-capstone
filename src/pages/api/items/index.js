@@ -32,9 +32,9 @@ const handler = async (request, response) => {
 		case "DELETE":
 			try {
 				console.log("try delete: delete is called");
-				console.log("try to get info about request bodynote: ", request.query.itemId);
+				console.log("try to get info about request bodynote: ", request.query.bratwurst);
 				const mongoResponse = await Item.findByIdAndDelete({
-					_id: request.query.itemId,
+					_id: request.query.bratwurst,
 				});
 				console.log("mongoDB response", mongoResponse);
 				response.status(200).json(mongoResponse);

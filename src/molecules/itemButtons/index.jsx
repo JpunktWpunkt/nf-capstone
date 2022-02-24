@@ -28,18 +28,27 @@ const ItemButtons = () => {
 		return null;
 	}
 
+	const handleDelete = async itemId => {
+		await axios.delete("/api/items", { params: { bratwurst: itemId } }); //1,Parameter aus der DB 2.Parameter aus useState
+		const result = await axios.get("/api/items");
+		setItems(result.data);
+	};
+
 	//sobald der fetch angekommen ist, wird der State von der Component verändert und bewirkt damit ein neurendern der component
 	return (
 		<div>
 			{items.map(item => {
 				return (
-					<>
-						<ButtonGroup>
-							<Button sx={{ ...btn }} variant="outlined">
-								{item.name}
-							</Button>
-						</ButtonGroup>
-					</>
+					<ButtonGroup>
+						<Button
+							key={item._id}
+							sx={{ ...btn }}
+							variant="outlined"
+							onClick={() => handleDelete(item._id)}
+						>
+							{item.name}
+						</Button>
+					</ButtonGroup>
 				);
 			})}
 		</div>

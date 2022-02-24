@@ -48,11 +48,11 @@ const AddShoppingList = () => {
 					<DialogContentText>Add a new Item to our Shopping-List </DialogContentText>
 					<TextField
 						autoFocus
+						fullWidth
 						margin="dense"
 						id="name"
 						label="Name"
 						type="name"
-						fullWidth
 						variant="standard"
 						onChange={e => setItem(e.target.value)}
 					/>
