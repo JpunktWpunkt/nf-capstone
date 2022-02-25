@@ -2,8 +2,9 @@ import { createTheme } from "@material-ui/core/styles";
 /*import { createTheme } from "@mui/material/styles";*/
 
 /*Palette*/
-const famHubGreen = "#00798C";
+
 const famHubBlue = "#30638E";
+const famHubGreen = "#00798C";
 const famHubRed = "#D1495B";
 const famHubYellow = "#EDAE49";
 const famHubGrey = "#e0e8e3";
