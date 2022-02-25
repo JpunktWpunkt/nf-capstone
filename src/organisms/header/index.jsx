@@ -10,6 +10,7 @@ import { useSession, signOut } from "next-auth/react";
 import logo from "../../images/familyhub300x300_3d.png";
 /*import logo2 from "../../images/familyhub300x300.png";*/
 import logo2 from "../../images/familyhubschriftwhite.png";
+import Stack from "@mui/material/Stack";
 
 const abs = {
 	borderRadius: "0 0 10px 10px",
@@ -24,24 +25,18 @@ const Header = () => {
 	return (
 		<Box sx={{ flexGrow: 0 }}>
 			<AppBar sx={{ ...abs }} position="fixed">
-				<Typography marginLeft="8rem" variant="h6">
-					Signed in as {session.user.email}
-				</Typography>
-				<Toolbar>
-					<Typography component="div" sx={{ flexGrow: 1 }}>
-						<Image
-							src={logo}
-							alt="logo"
-							width="80vw"
-							height="80vw"
-							justifyContent="left"
-						/>
-						<Image src={logo2} alt="logo" justifyContent="left" />
-					</Typography>
+				<Toolbar sx={{ flexDirection: "column" }}>
+					<Stack direction="row" sx={{ width: "100%", alignItems: "center" }}>
+						<Box sx={{ flexGrow: 1 }}>
+							<Image height={50} width={50} src={logo} alt="logo" />
+							<Image src={logo2} alt="logo" />
+						</Box>
 
-					<Button color="inherit" variant="outlined" onClick={() => signOut()}>
-						Logout
-					</Button>
+						<Button color="inherit" variant="outlined" onClick={() => signOut()}>
+							Logout
+						</Button>
+					</Stack>
+					<Typography variant="h6">Signed in as {session.user.email}</Typography>
 				</Toolbar>
 			</AppBar>
 		</Box>

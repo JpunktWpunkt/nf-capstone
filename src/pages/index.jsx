@@ -15,7 +15,7 @@ const btn = {
 	left: 0,
 	fontSize: "1rem",
 };
-
+const logoScale = 0.8;
 // eslint-disable-next-line react/function-component-definition
 const Page = ({ users }) => {
 	console.log(users);
@@ -26,7 +26,7 @@ const Page = ({ users }) => {
 				<meta key="description" name="description" content="This is my project" />
 			</Head>
 			<Box display="flex" justifyContent="center">
-				<Image src={logo} alt="logo" />
+				<Image width={216 * logoScale} height={293 * logoScale} src={logo} alt="logo" />
 			</Box>
 			<Box display="grid" flexWrap="wrap" justifyContent="center" sx={{ rowGap: 1 }}>
 				{users.map(user => {

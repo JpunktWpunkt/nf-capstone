@@ -17,7 +17,6 @@ const btnAdd = {
 	left: 0,
 	fontSize: "1.2rem",
 	bottom: "4.5rem",
-	background: "#5B764A",
 	padding: "0.5rem 1rem",
 };
 
@@ -69,7 +68,11 @@ const NoteList = ({ userId }) => {
 				})}
 			</Grid>
 			<div style={{ display: "flex", flexDirection: "column" }}>
-				<Button variant="contained" sx={{ ...btnAdd }} onClick={handleAddNote}>
+				<Button
+					variant="contained"
+					sx={theme => ({ ...btnAdd, background: theme.palette.common.addGreen })}
+					onClick={handleAddNote}
+				>
 					+ Add Note
 				</Button>
 			</div>

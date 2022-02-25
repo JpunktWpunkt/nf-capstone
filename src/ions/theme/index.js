@@ -1,14 +1,44 @@
 import { createTheme } from "@mui/material/styles";
 
 const famHubGreen = "#00798C";
+const famHubBlue = "#30638E";
 const famHubRed = "#D1495B";
+const famHubYellow = "#EDAE49";
 const famHubGrey = "#e0e8e3";
 const famHubAddGreen = "#5B764A";
+const MuiToolbar = {
+	styleOverrides: {
+		root: {
+			justifyContent: "space-between",
+		},
+	},
+};
+
+const MuiButton = {
+	defaultProps: {
+		variant: "contained",
+		disableRipple: true, //Ripple Effekt weg
+		disableElevation: true, //schlagschatten weg
+	},
+	styleOverride: {
+		//global alles rund ausser Button
+		root: {
+			borderRadius: 30,
+		},
+	},
+};
 
 //TODO hier noch anpassen
 const theme = createTheme({
 	palette: {
-		mode: "light",
+		common: {
+			green: famHubGreen,
+			red: famHubRed,
+			blue: famHubBlue,
+			yellow: famHubYellow,
+			grey: famHubGrey,
+			addGreen: famHubAddGreen,
+		},
 		primary: {
 			main: `${famHubGreen}`,
 			contrastText: "#fff",
@@ -18,21 +48,24 @@ const theme = createTheme({
 			contrastText: "#fff",
 		},
 		background: {
-			main: `${famHubAddGreen}`,
-			contrastText: "#fff",
+			default: `${famHubAddGreen}`,
 			paper: `${famHubGrey}`,
 		},
 	},
 	typography: {
 		h2: {
-			fontFamily: ["Adobe Handwriting", "Homemade Apple", "cursive", "serif"].join(","),
+			fontFamily: "'Adobe Handwriting',cursive",
+		},
+
+		h3: {
+			fontFamily: "'Adobe Handwriting',cursive",
 		},
 
 		h4: {
-			fontFamily: ["Adobe Handwriting", "Homemade Apple", "cursive", "serif"].join(","),
+			fontFamily: "'Adobe Handwriting',cursive",
 		},
 		h6: {
-			fontFamily: "serif",
+			fontFamily: "'Adobe Handwriting',cursive",
 			fontSize: "14px",
 		},
 		shape: {
@@ -40,31 +73,8 @@ const theme = createTheme({
 		},
 	},
 	components: {
-		MuiButton: {
-			defaultProps: {
-				variant: "contained",
-				disableRipple: true, //Ripple Effekt weg
-				disableElevation: true, //schlagschatten weg
-			},
-			styleOverride: {
-				//global alles rund ausser Button
-				root: {
-					borderRadius: 30,
-				},
-			},
-		},
-	},
-
-	MuiIconButton: {
-		styleOverride: {
-			root: {
-				borderRadius: 0,
-				color: "#30638E",
-				"&:hover": {
-					color: "red",
-				},
-			},
-		},
+		MuiToolbar,
+		MuiButton,
 	},
 });
 
